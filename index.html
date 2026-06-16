@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>快手程序化创建</title>
+    <link rel="stylesheet" href="styles.css?v=20260616-backend" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <header class="header">
+        <div class="header-container">
+          <div class="header-left">
+            <div class="logo">创量</div>
+            <button class="grid-icon-btn" type="button" aria-label="产品菜单">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </button>
+          </div>
+          <nav class="cl-nav" aria-label="主导航">
+            <button type="button">首页</button>
+            <button class="active" type="button">推广</button>
+            <button type="button">报表</button>
+            <button type="button">素材</button>
+            <button class="disabled" type="button">资产</button>
+            <button type="button">任务</button>
+            <button type="button">工具</button>
+            <button type="button">管理</button>
+          </nav>
+          <div class="header-right">
+            <button type="button">客服</button>
+            <button type="button">最新功能</button>
+            <button type="button">操作手册</button>
+            <button type="button">更新日志</button>
+            <div class="user-card">
+              <strong>星大陆（广州）网络科技有限公司</strong>
+              <span>企业管理员 · 标准版-尊享版</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app-body">
+        <aside class="asset-menu">
+          <div class="menu-group">
+            <div class="menu-title">通用资产</div>
+            <a>文案库</a>
+            <a>动态链接</a>
+          </div>
+          <div class="menu-group">
+            <div class="menu-title">巨量广告·标准</div>
+            <a>资产组</a>
+            <a>巨量商品库</a>
+            <a>巨量应用</a>
+            <a>小程序/小游戏</a>
+            <a>短剧推广链接</a>
+          </div>
+          <div class="menu-group">
+            <div class="menu-title">腾讯广告</div>
+            <a>定向模板</a>
+            <a>小游戏监控</a>
+            <a>微信小程序</a>
+          </div>
+          <div class="menu-group">
+            <div class="menu-title">磁力智投</div>
+            <a>磁力应用（新版）</a>
+            <a>快手小程序</a>
+            <a>快手小游戏</a>
+            <a>监测链接</a>
+            <a>通用链接</a>
+            <a>魔力建站</a>
+            <a>第三方落地页</a>
+            <a>试玩素材</a>
+          </div>
+          <div class="menu-group">
+            <div class="menu-title">素造平台</div>
+            <a>资产组管理</a>
+            <a>素材包管理</a>
+          </div>
+          <div class="menu-group">
+            <div class="menu-title">B站营销</div>
+            <a>应用管理</a>
+            <a>唤起（唤端）链接</a>
+          </div>
+        </aside>
+
+        <main class="content kuaishou-main">
+          <header class="page-header">
+            <div class="left">程序化批量/磁力智投</div>
+          </header>
+
+          <section class="config-wrapper panel">
+            <div class="panel-header flex">
+              <div class="panel-header-title">
+                <button class="el-button el-button--primary el-button--mini" type="button">选择策略组</button>
+                <button class="el-button w120 el-button--primary el-button--mini is-plain" type="button">选择任务</button>
+                <select id="strategyName" class="strategy-select" aria-label="策略组">
+                  <option>快手-益智闯关大挑战</option>
+                  <option>快手-勇者来通关</option>
+                  <option>快手-无敌趣消消</option>
+                  <option>快手-管理大亨</option>
+                </select>
+                <span class="strategy-title">已选「任务」：<b id="taskCount">16</b></span>
+              </div>
+              <div class="panel-header-right-wrapper">
+                <div class="account-count-info-wrapper">
+                  <div class="account-result-item">
+                    <p class="account-count" id="totalAds">16</p>
+                    <p class="account-info">预览广告数</p>
+                  </div>
+                </div>
+                <span class="icon-caret">▾</span>
+              </div>
+            </div>
+
+            <div class="panel-body">
+              <div class="config-form flex">
+                <div class="filter-selectors">
+                  <div class="selector user-selector">
+                    <span class="selector-label">媒体账户</span>
+                    <div class="selector-content">
+                      <div class="selector-main">游霄-开荒之旅-w(112939731)</div>
+                      <div class="selector-count" id="accountCount">已选账户(3)</div>
+                    </div>
+                    <button class="selector-suffix-btn" type="button">更改</button>
+                    <div class="account-popover-list" id="accountList"></div>
+                  </div>
+                  <div class="selector">
+                    <span class="selector-label">营销目标</span>
+                    <select class="el-select-inner" aria-label="营销目标">
+                      <option>推广小程序</option>
+                      <option>应用推广-应用下载</option>
+                      <option>应用推广-应用唤起</option>
+                    </select>
+                    <div class="hidden-goals">
+                      <label><input type="radio" name="goal" value="推广小程序" checked /> 推广小程序</label>
+                    </div>
+                  </div>
+                  <div class="selector">
+                    <span class="selector-label">产品</span>
+                    <select id="productName" class="el-select-inner">
+                      <option>无敌对战王者</option>
+                      <option>测试商品</option>
+                      <option>测试安卓应用(android)</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="el-button w120 el-button--default el-button--small is-plain rule-config-btn" type="button">
+                  <span>⚙ 规则配置</span>
+                </button>
+              </div>
+
+              <div class="config-table-wrapper">
+                <table class="config-table">
+                  <thead>
+                    <tr>
+                      <th colspan="2">广告组</th>
+                      <th colspan="4">广告创意</th>
+                    </tr>
+                    <tr>
+                      <th>广告组基本信息</th>
+                      <th>定向包</th>
+                      <th>创意基本信息</th>
+                      <th>创意素材</th>
+                      <th>文案</th>
+                      <th>落地页</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="table-cell">
+                        <div class="cell-title"><span>已选：1</span><button class="cell-link" data-editor="basic" type="button">编辑</button></div>
+                        <p><span class="item-label">广告类型：</span>展示广告</p>
+                        <p><span class="item-label">推广场景：</span>快手小程序/小游戏</p>
+                        <p><span class="item-label">投放类型：</span>全自动投放</p>
+                        <p><span class="item-label">周期稳投：</span>关闭</p>
+                        <p><span class="item-label">广告组命名规则：</span><input id="groupRule" value="开荒之旅_[日期][序号]" /></p>
+                        <p><span class="item-label">广告创意命名规则：</span><input id="creativeRule" value="<账户备注><素材名>" /></p>
+                        <p><span class="item-label">投放版位：</span>上下滑大屏广告,激励视频广告,信息流广告（双列）</p>
+                        <p><span class="item-label">投放场景：</span>成本优先</p>
+                        <p><span class="item-label">单日预算：</span><input id="budget" value="不限" /></p>
+                        <p><span class="item-label">排期：</span><input id="startDate" type="date" /> 至 --</p>
+                        <p><span class="item-label">投放时段：</span>全天</p>
+                        <p><span class="item-label">优化目标：</span>7日变现ROI（iaa专用）</p>
+                        <p><span class="item-label">计费方式：</span>按展示付费（oCPM）</p>
+                        <p><span class="item-label">ROI系数：</span><input id="roi" type="number" step="0.01" value="0.72" /></p>
+                      </td>
+                      <td class="table-cell">
+                        <div class="cell-title"><span>已选定向包：统一配置</span><button class="cell-link" data-editor="targeting" type="button">添加</button></div>
+                        <p><span class="item-label">定向包:</span>不限定向</p>
+                        <p><span class="item-label">定向人群包:</span></p>
+                        <p><span class="item-label">排除人群包:</span></p>
+                        <p><span class="item-label">付费人群包:</span></p>
+                        <p><span class="item-label">区域:</span></p>
+                        <p><span class="item-label">年龄:</span></p>
+                        <p><span class="item-label">性别:</span></p>
+                        <p><span class="item-label">平台:</span></p>
+                        <p><span class="item-label">手机品牌:</span></p>
+                        <p><span class="item-label">网络环境:</span></p>
+                      </td>
+                      <td class="table-cell">
+                        <div class="cell-title"><span>创意基本信息</span><button class="cell-link" data-editor="creativeInfo" type="button">编辑</button></div>
+                        <p><span class="item-label">原生广告：</span>开启</p>
+                        <p><span class="item-label">创意制作方式：</span>自定义创意</p>
+                        <p><span class="item-label">封面贴纸：</span>0/1</p>
+                        <p><span class="item-label">行动号召：</span><input id="cta" value="去玩游戏" /></p>
+                        <p><span class="item-label">推荐理由：</span><input id="reason" value="全网火热，爆款游戏" /></p>
+                        <p><span class="item-label">创意分类：</span></p>
+                        <p><span class="item-label">创意名称：</span>&lt;账户备注&gt;&lt;素材名&gt;</p>
+                      </td>
+                      <td class="table-cell material-cell">
+                        <div class="cell-title"><span id="assetCount">已选：16组</span><button class="cell-link" id="addAssetBtn" data-editor="material" type="button">选择素材</button></div>
+                        <button class="cell-action" id="autoGroupBtn" type="button">自动匹配</button>
+                        <div class="asset-tags compact" id="assetBoard"></div>
+                      </td>
+                      <td class="table-cell copy-cell">
+                        <div class="cell-title"><span>已选：3组</span><button class="cell-link" id="shuffleBtn" type="button">乱序</button><button class="cell-link" data-editor="copy" type="button">添加文案</button></div>
+                        <div class="program-tip compact-tip">
+                          选择自动匹配，系统将先通过定向包和创意组排列组合生成一批广告，然后为自动匹配您选择的文案。
+                        </div>
+                        <label class="copy-label">已选文案：</label>
+                        <textarea id="copyText" rows="4">一步错步步错，挑战你的智商极限！
+休闲小游戏，享受美好时光
+别笑，你来你也过不了第二关！</textarea>
+                      </td>
+                      <td class="table-cell">
+                        <p>小程序推广无需选择落地页</p>
+                        <button class="cell-action" type="button">配置快手小游戏</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="bottom-actions">
+                <button class="primary-btn" id="previewBtn" type="button">预览广告组</button>
+                <button class="primary-btn" id="saveBtn" type="button">保存策略组</button>
+                <button class="primary-btn" id="exportBtn" type="button">提交审核</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="empty-wrapper empty-block" id="previewEmpty">
+            <div>
+              <h3 class="empty-title">预览区</h3>
+              <div class="empty-img">AD</div>
+              <p class="empty-description">请先完成模块配置后，再预览广告组</p>
+            </div>
+          </section>
+
+          <section class="preview-result" id="previewResult">
+            <div class="preview-total">预览广告数 <strong> <span id="previewTotalMirror">0</span></strong></div>
+            <table>
+              <thead>
+                <tr>
+                  <th>账户</th>
+                  <th>广告组</th>
+                  <th>素材</th>
+                </tr>
+              </thead>
+              <tbody id="previewRows"></tbody>
+            </table>
+          </section>
+        </main>
+
+      </div>
+
+      <section class="editor-shell" id="editorShell" aria-hidden="true">
+        <div class="editor-body">
+          <div class="editor-header">
+            <div>
+              <h2 id="editorTitle">编辑</h2>
+              <p id="editorDesc">按快手程序化创建参考页配置当前模块</p>
+            </div>
+            <div class="editor-actions">
+              <button class="white-btn" id="editorCancel" type="button">取消</button>
+              <button class="primary-btn" id="editorSave" type="button">保存</button>
+            </div>
+          </div>
+          <aside class="editor-nav">
+            <button class="active" data-editor-tab="basic" type="button">广告组基本信息</button>
+            <button data-editor-tab="creativeInfo" type="button">创意基本信息</button>
+            <button data-editor-tab="material" type="button">创意素材</button>
+            <button data-editor-tab="copy" type="button">文案</button>
+          </aside>
+
+          <div class="editor-pages">
+            <article class="editor-page active" data-editor-page="basic">
+              <div class="edit-section">
+                <h3>选择广告类型</h3>
+                <div class="option-row">
+                  <label class="option-card active"><input type="radio" name="adType" checked /> 展示广告<span>向潜在转化用户主动推荐广告</span></label>
+                  <label class="option-card"><input type="radio" name="adType" /> 搜索广告<span>通过关键词触达搜索流量</span></label>
+                </div>
+              </div>
+              <div class="edit-section two-col">
+                <div>
+                  <h3>推广场景</h3>
+                  <div class="radio-list">
+                    <label><input type="radio" name="sceneEdit" checked /> 快手小程序/小游戏</label>
+                    <label><input type="radio" name="sceneEdit" /> 微信小程序/小游戏</label>
+                    <label><input type="radio" name="sceneEdit" /> 小游戏</label>
+                  </div>
+                </div>
+                <div>
+                  <h3>选择投放类型</h3>
+                  <div class="radio-list">
+                    <label><input type="radio" name="deliveryEdit" checked /> 全自动投放</label>
+                    <label><input type="radio" name="deliveryEdit" /> 常规投放</label>
+                  </div>
+                  <p class="edit-note">平台投放模式升级中，建议使用全自动投放提效增量。</p>
+                </div>
+              </div>
+              <div class="edit-section">
+                <h3>广告组命名规则</h3>
+                <div class="inline-form">
+                  <input class="wide-input" id="editorGroupRule" value="开荒之旅_[日期][序号]" />
+                  <span>17/100</span>
+                </div>
+                <div class="token-area">
+                  <b>磁力通配符:</b>
+                  <button type="button">序号</button><button type="button">日期</button><button type="button">时间</button>
+                  <b>| 创量通配符</b>
+                  <button type="button">账户ID</button><button type="button">账户备注</button><button type="button">定向包名</button><button type="button">素材名</button><button type="button">小程序名称</button><button type="button">快手ID</button>
+                </div>
+              </div>
+              <div class="edit-section">
+                <h3>投放位置</h3>
+                <div class="checkbox-grid">
+                  <label><input type="checkbox" checked /> 快手主站</label>
+                  <label><input type="checkbox" /> 快手联盟</label>
+                  <label><input type="checkbox" checked /> 上下滑大屏广告</label>
+                  <label><input type="checkbox" checked /> 激励视频广告</label>
+                  <label><input type="checkbox" checked /> 信息流广告（双列）</label>
+                  <label><input type="checkbox" /> 内容消费资源位</label>
+                </div>
+              </div>
+              <div class="edit-section three-col">
+                <label><span>投放场景</span><select><option>成本优先</option><option>最大转化</option><option>ROI约束</option></select></label>
+                <label><span>单日预算</span><input id="editorBudget" value="不限" /></label>
+                <label><span>投放时段</span><select><option>全天</option><option>特定时间</option></select></label>
+                <label><span>优化目标</span><select><option>7日变现ROI（iaa专用）</option><option>行为数</option><option>转化数</option></select></label>
+                <label><span>计费方式</span><select><option>按展示付费(oCPM)</option><option>点击计费（CPC）</option></select></label>
+                <label><span>ROI系数</span><input id="editorRoi" value="0.72" /></label>
+              </div>
+              <div class="edit-section">
+                <h3>广告组名称配置</h3>
+                <div class="inline-form">
+                  <label><input type="checkbox" /> 分账户配置</label>
+                  <label><input type="checkbox" checked /> 自动截断</label>
+                  <input class="wide-input" value="开荒之旅_[日期][序号]" />
+                </div>
+                <p class="edit-note">您的广告组名称使用了通配符，系统将在提交时自动替换内容，请确保名称不超过100个字符。</p>
+              </div>
+            </article>
+
+            <article class="editor-page" data-editor-page="creativeInfo">
+              <div class="edit-section two-col">
+                <div>
+                  <h3>搜索快投</h3>
+                  <p class="edit-note">选择智能优选或上下滑大屏广告投放版位，将为您开启搜索投放。</p>
+                  <label class="switch-line"><input type="checkbox" /> 开启搜索快投</label>
+                </div>
+                <div>
+                  <h3>原生广告</h3>
+                  <p class="edit-note">开启后，能使用原生投放样式，突破流量限制，额外获得优质原生流量。</p>
+                  <label class="switch-line"><input type="checkbox" checked /> 原生广告投放</label>
+                </div>
+              </div>
+              <div class="edit-section">
+                <h3>授权类型</h3>
+                <div class="option-row">
+                  <label class="option-card active"><input type="radio" name="authType" checked /> 服务号授权<span>筛选所有账户共有的服务号</span></label>
+                  <label class="option-card"><input type="radio" name="authType" /> 达人视频授权<span>使用达人视频内容样式</span></label>
+                  <label class="option-card"><input type="radio" name="authType" /> 普通快手号<span>需在资产-快手号授权绑定</span></label>
+                </div>
+                <div class="inline-form">
+                  <label><span>选择方式</span><select><option>手动设置</option><option>自动匹配</option></select></label>
+                  <label><span>选择快手号</span><select><option>妮可打怪兽🎮(5440690751)</option></select></label>
+                  <button class="white-btn" type="button">同步</button>
+                </div>
+              </div>
+              <div class="edit-section three-col">
+                <label><span>PLC 描述语（选填）</span><input value="禁用词汇" /></label>
+                <label><span>创意制作方式</span><select><option>自定义创意</option><option>程序化3.0</option><option>智能创意</option></select></label>
+                <label><span>封面贴纸</span><select><option>不使用</option><option>智能推荐</option></select></label>
+              </div>
+              <div class="edit-section">
+                <h3>行动号召</h3>
+                <div class="choice-cloud" id="ctaCloud">
+                  <button class="active" type="button">去玩游戏</button><button type="button">了解详情</button><button type="button">立即参与</button><button type="button">试玩游戏</button><button type="button">立即试玩</button><button type="button">一键开玩</button><button type="button">点我玩玩</button>
+                </div>
+                <h3>推荐理由</h3>
+                <div class="choice-cloud" id="reasonCloud">
+                  <button class="active" type="button">全网火热</button><button type="button">爆款游戏</button><button type="button">火热预约</button><button type="button">抢先预约</button><button type="button">全新体验</button><button type="button">酣畅开玩</button>
+                </div>
+              </div>
+              <div class="edit-section">
+                <h3>AIGC素材推荐</h3>
+                <label class="switch-line"><input type="checkbox" /> 开启后，添加素材支持选择AIGC生成素材</label>
+                <div class="inline-form">
+                  <label><span>爆款裂变</span><select><option>不开启</option><option>开启</option></select></label>
+                  <label><span>创意分类</span><select><option>游戏</option><option>教育</option><option>文娱图书</option><option>其它</option></select></label>
+                  <label><span>创意标签</span><input placeholder="添加（回车键）" /></label>
+                </div>
+              </div>
+            </article>
+
+            <article class="editor-page" data-editor-page="material">
+              <div class="edit-section">
+                <h3>素材选取方式</h3>
+                <div class="option-row">
+                  <label class="option-card active"><input type="radio" name="materialMode" checked /> 手动选取素材<span>不能改变原有素材选取方式</span></label>
+                  <label class="option-card"><input type="radio" name="materialMode" /> 动态选取素材<span>动态词包与资产组自动匹配</span></label>
+                </div>
+              </div>
+              <div class="edit-section">
+                <h3>多账户分配规则</h3>
+                <div class="option-row">
+                  <label class="option-card active"><input type="radio" name="assetRule" checked /> 全账户复用<span>所有账户都使用一样的素材</span></label>
+                  <label class="option-card"><input type="radio" name="assetRule" /> 平均分配<span>素材平均分到每个账户中</span></label>
+                  <label class="option-card"><input type="radio" name="assetRule" /> 分账户选择<span>每个账户单独选择素材</span></label>
+                </div>
+              </div>
+              <div class="edit-section">
+                <div class="material-toolbar">
+                  <div>
+                    <strong>每个创意组配置</strong>
+                    <span>16 个视频创意 · 视频数量：229 · 每组创意总数不得超过15</span>
+                  </div>
+                  <div>
+                    <button class="white-btn" type="button">清空素材</button>
+                    <button class="white-btn" type="button">批量修改</button>
+                    <button class="primary-btn" id="editorBatchAdd" type="button">批量添加视频</button>
+                  </div>
+                </div>
+                <div class="checkbox-grid">
+                  <label><input type="checkbox" checked /> 素材状态实时检测</label>
+                  <label><input type="checkbox" /> 自定义封面</label>
+                  <label><input type="radio" name="sloganMatch" checked /> 广告语匹配方式：手动填写</label>
+                  <label><input type="radio" name="sloganMatch" /> 按创意匹配</label>
+                  <label><input type="radio" name="pushHome" checked /> 不推送</label>
+                  <label><input type="radio" name="pushHome" /> 推送(主页展示)</label>
+                </div>
+              </div>
+              <div class="creative-groups" id="creativeGroups"></div>
+            </article>
+
+            <article class="editor-page" data-editor-page="copy">
+              <div class="edit-section">
+                <h3>文案选取方式</h3>
+                <div class="option-row">
+                  <label class="option-card active"><input type="radio" name="copyMode" checked /> 手动选取文案<span>从文案库筛选并添加</span></label>
+                  <label class="option-card"><input type="radio" name="copyMode" /> 动态选取文案<span>按规则动态匹配文案</span></label>
+                </div>
+                <label class="switch-line"><input type="checkbox" /> 使用素材名称作为文案</label>
+              </div>
+              <div class="edit-section two-col">
+                <div>
+                  <h3>多账户分配规则</h3>
+                  <div class="radio-list">
+                    <label><input type="radio" name="copyRule" checked /> 全账户复用：所有账户都使用一样的规则</label>
+                    <label><input type="radio" name="copyRule" /> 分账户选择：每个账户单独选择规则</label>
+                  </div>
+                </div>
+                <div>
+                  <h3>作品广告语</h3>
+                  <div class="inline-form">
+                    <select><option>分类：全部</option><option>武侠</option><option>荒岛生存100天</option><option>企微</option></select>
+                    <select><option>创建者：星大陆（广州）网络科技有限公司</option><option>绿洲-刘雨微</option><option>绿洲-蔡蔓娴</option></select>
+                  </div>
+                </div>
+              </div>
+              <div class="edit-section">
+                <div class="material-toolbar">
+                  <div>
+                    <strong>文案库</strong>
+                    <span>共 534 条 · 当前已选 3 组</span>
+                  </div>
+                  <div>
+                    <input class="search-input" placeholder="搜索文案名称" />
+                    <button class="white-btn" type="button">查询</button>
+                    <button class="primary-btn" id="editorAddCopy" type="button">添加文案</button>
+                  </div>
+                </div>
+                <table class="library-table">
+                  <thead>
+                    <tr>
+                      <th>文案名称</th>
+                      <th>创建者</th>
+                      <th>创建时间</th>
+                      <th>3日消耗</th>
+                      <th>30日点击率</th>
+                      <th>关联广告组数</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="copyLibraryRows"></tbody>
+                </table>
+              </div>
+              <div class="edit-section">
+                <h3>已选文案</h3>
+                <textarea id="editorCopyText" rows="5">一步错步步错，挑战你的智商极限！
+休闲小游戏，享受美好时光
+别笑，你来你也过不了第二关！</textarea>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js?v=20260616-backend"></script>
+  </body>
+</html>
