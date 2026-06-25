@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>快手程序化创建</title>
-    <link rel="stylesheet" href="styles.css?v=20260616-backend" />
+    <link rel="stylesheet" href="styles.css?v=20260624-grouped-creative-assets" />
   </head>
   <body>
     <div class="main-wrapper">
@@ -27,6 +27,11 @@
             <button type="button">管理</button>
           </nav>
           <div class="header-right">
+            <div class="auth-entry" id="authEntry">
+              <span class="auth-status" id="authStatusText">授权检测中</span>
+              <button class="auth-btn" id="authorizeBtn" type="button">快手授权</button>
+              <button class="auth-btn secondary" id="refreshAuthBtn" type="button">刷新授权</button>
+            </div>
             <button type="button">客服</button>
             <button type="button">最新功能</button>
             <button type="button">操作手册</button>
@@ -99,12 +104,12 @@
                   <option>快手-无敌趣消消</option>
                   <option>快手-管理大亨</option>
                 </select>
-                <span class="strategy-title">已选「任务」：<b id="taskCount">16</b></span>
+                <span class="strategy-title">已选「任务」：<b id="taskCount">0</b></span>
               </div>
               <div class="panel-header-right-wrapper">
                 <div class="account-count-info-wrapper">
                   <div class="account-result-item">
-                    <p class="account-count" id="totalAds">16</p>
+                    <p class="account-count" id="totalAds">0</p>
                     <p class="account-info">预览广告数</p>
                   </div>
                 </div>
@@ -176,6 +181,7 @@
                         <p><span class="item-label">广告组命名规则：</span><input id="groupRule" value="开荒之旅_[日期][序号]" /></p>
                         <p><span class="item-label">广告创意命名规则：</span><input id="creativeRule" value="<账户备注><素材名>" /></p>
                         <p><span class="item-label">投放版位：</span>上下滑大屏广告,激励视频广告,信息流广告（双列）</p>
+                        <p><span class="item-label">推广目标：</span><span id="promotionTargetSummary">小游戏 ks690739594015559335</span></p>
                         <p><span class="item-label">投放场景：</span>成本优先</p>
                         <p><span class="item-label">单日预算：</span><input id="budget" value="不限" /></p>
                         <p><span class="item-label">排期：</span><input id="startDate" type="date" /> 至 --</p>
@@ -185,17 +191,17 @@
                         <p><span class="item-label">ROI系数：</span><input id="roi" type="number" step="0.01" value="0.72" /></p>
                       </td>
                       <td class="table-cell">
-                        <div class="cell-title"><span>已选定向包：统一配置</span><button class="cell-link" data-editor="targeting" type="button">添加</button></div>
-                        <p><span class="item-label">定向包:</span>不限定向</p>
-                        <p><span class="item-label">定向人群包:</span></p>
-                        <p><span class="item-label">排除人群包:</span></p>
-                        <p><span class="item-label">付费人群包:</span></p>
-                        <p><span class="item-label">区域:</span></p>
-                        <p><span class="item-label">年龄:</span></p>
-                        <p><span class="item-label">性别:</span></p>
-                        <p><span class="item-label">平台:</span></p>
-                        <p><span class="item-label">手机品牌:</span></p>
-                        <p><span class="item-label">网络环境:</span></p>
+                        <div class="cell-title"><span id="targetingTitle">已选定向包：统一配置</span><button class="cell-link" data-editor="targeting" type="button">添加</button></div>
+                        <p><span class="item-label">定向包:</span><span id="targetingPackageSummary">不限定向</span></p>
+                        <p><span class="item-label">定向人群包:</span><span id="targetingIncludeSummary"></span></p>
+                        <p><span class="item-label">排除人群包:</span><span id="targetingExcludeSummary"></span></p>
+                        <p><span class="item-label">付费人群包:</span><span id="targetingPaidSummary"></span></p>
+                        <p><span class="item-label">区域:</span><span id="targetingRegionSummary"></span></p>
+                        <p><span class="item-label">年龄:</span><span id="targetingAgeSummary"></span></p>
+                        <p><span class="item-label">性别:</span><span id="targetingGenderSummary"></span></p>
+                        <p><span class="item-label">平台:</span><span id="targetingPlatformSummary"></span></p>
+                        <p><span class="item-label">手机品牌:</span><span id="targetingBrandSummary"></span></p>
+                        <p><span class="item-label">网络环境:</span><span id="targetingNetworkSummary"></span></p>
                       </td>
                       <td class="table-cell">
                         <div class="cell-title"><span>创意基本信息</span><button class="cell-link" data-editor="creativeInfo" type="button">编辑</button></div>
@@ -208,7 +214,7 @@
                         <p><span class="item-label">创意名称：</span>&lt;账户备注&gt;&lt;素材名&gt;</p>
                       </td>
                       <td class="table-cell material-cell">
-                        <div class="cell-title"><span id="assetCount">已选：16组</span><button class="cell-link" id="addAssetBtn" data-editor="material" type="button">选择素材</button></div>
+                        <div class="cell-title"><span id="assetCount">已选：0个</span><button class="cell-link" id="addAssetBtn" data-editor="material" type="button">选择素材</button></div>
                         <button class="cell-action" id="autoGroupBtn" type="button">自动匹配</button>
                         <div class="asset-tags compact" id="assetBoard"></div>
                       </td>
@@ -234,6 +240,7 @@
               <div class="bottom-actions">
                 <button class="primary-btn" id="previewBtn" type="button">预览广告组</button>
                 <button class="primary-btn" id="saveBtn" type="button">保存策略组</button>
+                <button class="primary-btn danger-btn" id="realCreateBtn" type="button">上传素材创建（暂停）</button>
                 <button class="primary-btn" id="exportBtn" type="button">提交审核</button>
               </div>
             </div>
@@ -249,6 +256,7 @@
 
           <section class="preview-result" id="previewResult">
             <div class="preview-total">预览广告数 <strong> <span id="previewTotalMirror">0</span></strong></div>
+            <div class="create-result" id="createResult" aria-live="polite"></div>
             <table>
               <thead>
                 <tr>
@@ -278,6 +286,7 @@
           </div>
           <aside class="editor-nav">
             <button class="active" data-editor-tab="basic" type="button">广告组基本信息</button>
+            <button data-editor-tab="targeting" type="button">定向包</button>
             <button data-editor-tab="creativeInfo" type="button">创意基本信息</button>
             <button data-editor-tab="material" type="button">创意素材</button>
             <button data-editor-tab="copy" type="button">文案</button>
@@ -334,6 +343,19 @@
                   <label><input type="checkbox" /> 内容消费资源位</label>
                 </div>
               </div>
+              <div class="edit-section">
+                <h3>推广目标</h3>
+                <div class="promotion-target-box">
+                  <div class="promotion-target-tabs" role="radiogroup" aria-label="推广目标">
+                    <label class="promotion-target-option"><input type="radio" name="promotionTargetType" value="miniProgram" /> 小程序</label>
+                    <label class="promotion-target-option active"><input type="radio" name="promotionTargetType" value="miniGame" checked /> 小游戏</label>
+                  </div>
+                  <label class="promotion-appid-field">
+                    <span id="editorPromotionAppIdLabel">小游戏APPID</span>
+                    <input id="editorPromotionAppId" value="ks690739594015559335" placeholder="请输入小游戏 APPID" />
+                  </label>
+                </div>
+              </div>
               <div class="edit-section three-col">
                 <label><span>投放场景</span><select><option>成本优先</option><option>最大转化</option><option>ROI约束</option></select></label>
                 <label><span>单日预算</span><input id="editorBudget" value="不限" /></label>
@@ -347,9 +369,39 @@
                 <div class="inline-form">
                   <label><input type="checkbox" /> 分账户配置</label>
                   <label><input type="checkbox" checked /> 自动截断</label>
-                  <input class="wide-input" value="开荒之旅_[日期][序号]" />
+                  <input class="wide-input" id="editorGroupNameRule" value="开荒之旅_[日期][序号]" />
                 </div>
                 <p class="edit-note">您的广告组名称使用了通配符，系统将在提交时自动替换内容，请确保名称不超过100个字符。</p>
+              </div>
+            </article>
+
+            <article class="editor-page" data-editor-page="targeting">
+              <div class="edit-section">
+                <h3>定向包选择</h3>
+                <div class="option-row">
+                  <label class="option-card active"><input type="radio" name="targetingPackageMode" value="none" checked /> 不限定向<span>不选择定向包，使用不限人群投放</span></label>
+                  <label class="option-card"><input type="radio" name="targetingPackageMode" value="unified" /> 统一配置<span>所有账户使用同一套定向配置</span></label>
+                  <label class="option-card"><input type="radio" name="targetingPackageMode" value="account" /> 分账户配置<span>不同账户单独选择定向包</span></label>
+                </div>
+                <div class="inline-form targeting-picker-row">
+                  <label><span>定向包</span><select id="editorTargetingPackage"><option>不限定向</option><option>统一定向包</option><option>小游戏泛人群</option><option>高活跃游戏人群</option></select></label>
+                  <button class="white-btn" type="button">同步定向包</button>
+                </div>
+              </div>
+              <div class="edit-section two-col targeting-fields">
+                <label><span>定向人群包</span><input id="editorTargetingInclude" placeholder="选择或输入人群包名称" /></label>
+                <label><span>排除人群包</span><input id="editorTargetingExclude" placeholder="选择或输入排除人群包" /></label>
+                <label><span>付费人群包</span><input id="editorTargetingPaid" placeholder="选择或输入付费人群包" /></label>
+                <label><span>区域</span><input id="editorTargetingRegion" placeholder="全国 / 指定省市" /></label>
+                <label><span>年龄</span><select id="editorTargetingAge"><option>不限</option><option>18-23</option><option>24-30</option><option>31-40</option><option>41-49</option><option>50+</option></select></label>
+                <label><span>性别</span><select id="editorTargetingGender"><option>不限</option><option>男</option><option>女</option></select></label>
+                <label><span>平台</span><select id="editorTargetingPlatform"><option>不限</option><option>Android</option><option>iOS</option></select></label>
+                <label><span>手机品牌</span><input id="editorTargetingBrand" placeholder="不限 / 华为 / 小米 / OPPO..." /></label>
+                <label><span>网络环境</span><select id="editorTargetingNetwork"><option>不限</option><option>Wi-Fi</option><option>移动网络</option></select></label>
+              </div>
+              <div class="edit-section">
+                <h3>定向预览</h3>
+                <div class="targeting-preview" id="targetingPreview"></div>
               </div>
             </article>
 
@@ -409,8 +461,25 @@
               <div class="edit-section">
                 <h3>素材选取方式</h3>
                 <div class="option-row">
-                  <label class="option-card active"><input type="radio" name="materialMode" checked /> 手动选取素材<span>不能改变原有素材选取方式</span></label>
-                  <label class="option-card"><input type="radio" name="materialMode" /> 动态选取素材<span>动态词包与资产组自动匹配</span></label>
+                  <label class="option-card active"><input type="radio" name="folderPickMode" value="random" checked /> 随机选本地素材<span>从本地文件夹中为每个创意组随机抽取素材</span></label>
+                  <label class="option-card"><input type="radio" name="folderPickMode" value="specified" /> 指定选本地素材<span>每个创意组手动勾选要使用的素材</span></label>
+                </div>
+                <div class="folder-picker">
+                  <input id="folderInput" type="file" webkitdirectory directory multiple accept="video/*,image/*" hidden />
+                  <button class="primary-btn" id="editorBatchAdd" type="button">选择本地文件夹</button>
+                  <button class="white-btn" id="randomAssignBtn" type="button">重新随机</button>
+                  <button class="white-btn" id="uploadMaterialsBtn" type="button">上传到快手</button>
+                  <label class="group-count-field">
+                    <span>创意组数量</span>
+                    <input id="creativeGroupCountInput" type="number" min="1" max="200" step="1" value="16" />
+                  </label>
+                  <label class="group-count-field">
+                    <span>每组素材数</span>
+                    <input id="assetsPerGroupInput" type="number" min="1" max="200" step="1" value="15" />
+                  </label>
+                  <span id="folderName">未选择文件夹</span>
+                  <small id="folderStats">本地素材 0 个 · 已分配 0 个</small>
+                  <div class="upload-notice" id="uploadNotice" aria-live="polite"></div>
                 </div>
               </div>
               <div class="edit-section">
@@ -425,12 +494,12 @@
                 <div class="material-toolbar">
                   <div>
                     <strong>每个创意组配置</strong>
-                    <span>16 个视频创意 · 视频数量：229 · 每组创意总数不得超过15</span>
+                    <span id="materialToolbarStats">16 个创意组 · 本地素材 0 个 · 每组最多 15 个</span>
                   </div>
                   <div>
-                    <button class="white-btn" type="button">清空素材</button>
+                    <button class="white-btn" id="clearAssetsBtn" type="button">清空素材</button>
                     <button class="white-btn" type="button">批量修改</button>
-                    <button class="primary-btn" id="editorBatchAdd" type="button">批量添加视频</button>
+                    <button class="primary-btn" id="folderPickBtn" type="button">选择文件夹</button>
                   </div>
                 </div>
                 <div class="checkbox-grid">
@@ -510,6 +579,6 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="app.js?v=20260616-backend"></script>
+    <script src="app.js?v=20260624-grouped-creative-assets"></script>
   </body>
 </html>

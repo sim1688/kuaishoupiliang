@@ -1,0 +1,33 @@
+{
+  "version": "20260622-auto-rule-fix",
+  "received": {
+    "advertiser_id": 39059876,
+    "source_campaign_id": 9295250964,
+    "campaign_name": "开荒之旅_0620",
+    "unit_name": "开荒之旅_0620",
+    "creative_name": "大师爱闯关0430片头+第二关 (40)",
+    "group_rule": "开荒之旅_0620",
+    "creative_rule": "<账户备注><素材名>",
+    "roi_ratio": "0.99",
+    "start_date": "2026-06-22",
+    "photo_id": "5199968918782816420",
+    "put_status": 2,
+    "max_units": 1,
+    "max_creative_attempts": 60,
+    "save_files": true
+  },
+  "options": {
+    "campaignName": "开荒之旅_0620",
+    "startDate": "2026-06-22",
+    "putStatus": 2,
+    "unitName": "开荒之旅_0620",
+    "creativeName": "大师爱闯关0430片头+第二关 (40)",
+    "unitNameRule": "开荒之旅_0620",
+    "creativeNameRule": "<账户备注><素材名>",
+    "roiRatio": "0.99",
+    "photoId": "5199968918782816420",
+    "maxUnits": 1,
+    "maxCreativeAttempts": 60,
+    "saveFiles": true
+  }
+}

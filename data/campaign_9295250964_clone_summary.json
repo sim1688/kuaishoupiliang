@@ -1,0 +1,57 @@
+﻿{
+    "source_campaign_id":  9295250964,
+    "new_campaign_id":  9796577507,
+    "new_campaign_name":  "新建广告计划_20260515_10:05_copy_20260617",
+    "units_created":  15,
+    "creatives_recorded_created":  200,
+    "failed_creative_attempts":  183,
+    "top_failed_reasons":  [
+                               {
+                                   "Count":  22,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5212072337202286190 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  19,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5192650563766424289 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  17,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5215450039178312093 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  16,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5211227913900825243 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  14,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5237686563180769667 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  12,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5225864614603647461 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  8,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5203065140616670759 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  7,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5257952760817356055 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  6,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5197998588978398268 kolUserId:4219963433"
+                               },
+                               {
+                                   "Count":  6,
+                                   "Name":  "原生视频库视频必须是广告主有效视频,photoId:5229805261215906837 kolUserId:4219963433"
+                               }
+                           ],
+    "result_file":  "H:\\888-CODEX\\2-快手自动创编\\data\\campaign_9295250964_clone_result.json",
+    "snapshot_file":  "H:\\888-CODEX\\2-快手自动创编\\data\\campaign_9295250964_snapshot.json",
+    "platform_creatives_count":  202,
+    "platform_units_count":  15,
+    "platform_campaign_put_status":  2,
+    "platform_unit_put_status":  "all 2",
+    "platform_creative_put_status":  "all 2"
+}

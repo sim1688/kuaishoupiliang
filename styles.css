@@ -124,6 +124,55 @@ button {
   white-space: nowrap;
 }
 
+.auth-entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: 1px solid #dcdfe6;
+  border-radius: 3px;
+  background: #fafafa;
+}
+
+.auth-status {
+  max-width: 110px;
+  overflow: hidden;
+  color: #909399;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.auth-entry.ok .auth-status {
+  color: #67c23a;
+}
+
+.auth-entry.warn .auth-status {
+  color: #e6a23c;
+}
+
+.auth-entry.error .auth-status {
+  color: #f56c6c;
+}
+
+.header-right .auth-btn {
+  height: 24px;
+  padding: 0 8px;
+  color: #fff;
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 3px;
+}
+
+.header-right .auth-btn.secondary {
+  color: var(--blue);
+  background: #fff;
+}
+
+.header-right .auth-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .user-card {
   display: flex;
   flex-direction: column;
@@ -377,6 +426,20 @@ textarea:focus {
   background: var(--blue-dark);
 }
 
+.primary-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.danger-btn {
+  background: #e6a23c;
+  border-color: #e6a23c;
+}
+
+.danger-btn:hover {
+  background: #cf8f2e;
+}
+
 .goal-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -529,6 +592,24 @@ textarea:focus {
   border: 0;
 }
 
+.asset-tag span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.asset-tag small {
+  flex: 0 0 auto;
+  color: #909399;
+  font-size: 11px;
+}
+
+.asset-empty {
+  color: #909399;
+  font-size: 12px;
+}
+
 .asset-remove {
   padding: 0;
   color: #f56c6c;
@@ -604,6 +685,41 @@ textarea:focus {
   background: #f5f7fa;
   border: 1px solid var(--line);
   line-height: 42px;
+}
+
+.create-result {
+  display: none;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  line-height: 1.7;
+}
+
+.create-result.success,
+.create-result.error {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px 16px;
+}
+
+.create-result strong {
+  grid-column: 1 / -1;
+}
+
+.create-result.success {
+  color: #2f6f39;
+  background: #f0f9eb;
+  border: 1px solid #d8efcf;
+}
+
+.create-result.error {
+  color: #a94442;
+  background: #fef0f0;
+  border: 1px solid #f5c6cb;
+}
+
+.create-result span {
+  overflow-wrap: anywhere;
 }
 
 .preview-total strong {
@@ -912,12 +1028,165 @@ td {
   color: #606266;
 }
 
+.promotion-target-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-left: 144px;
+}
+
+.promotion-target-tabs {
+  display: inline-flex;
+  overflow: hidden;
+  border: 1px solid #dcdfe6;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.promotion-target-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 86px;
+  height: 32px;
+  padding: 0 14px;
+  color: #606266;
+  border-right: 1px solid #dcdfe6;
+  cursor: pointer;
+}
+
+.promotion-target-option:last-child {
+  border-right: 0;
+}
+
+.promotion-target-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.promotion-target-option.active {
+  color: #409eff;
+  background: #ecf5ff;
+}
+
+.promotion-appid-field {
+  display: grid;
+  grid-template-columns: 108px minmax(260px, 360px);
+  align-items: center;
+  gap: 8px;
+}
+
+.promotion-appid-field span {
+  color: #606266;
+  text-align: right;
+}
+
+.targeting-picker-row label {
+  display: grid;
+  grid-template-columns: 72px minmax(220px, 320px);
+  align-items: center;
+  gap: 8px;
+}
+
+.targeting-picker-row label span {
+  color: #606266;
+  text-align: right;
+}
+
+.targeting-fields label {
+  grid-template-columns: 110px minmax(0, 1fr);
+}
+
+.targeting-preview {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 8px 12px;
+  margin-left: 144px;
+  padding: 12px;
+  background: #fafafa;
+  border: 1px solid #ebeef5;
+  color: #606266;
+}
+
+.targeting-preview span {
+  text-align: right;
+  color: #909399;
+}
+
+.targeting-preview strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #303133;
+  font-weight: 500;
+}
+
 .choice-cloud {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
   margin-left: 144px;
+}
+
+.folder-picker {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto minmax(180px, 1fr);
+  align-items: center;
+  gap: 8px 10px;
+  margin: 12px 0 0 144px;
+  padding: 10px 12px;
+  background: #fafafa;
+  border: 1px solid #ebeef5;
+}
+
+.folder-picker span {
+  min-width: 0;
+  overflow: hidden;
+  color: #303133;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.folder-picker small {
+  grid-column: 6;
+  color: #909399;
+  font-size: 12px;
+}
+
+.upload-notice {
+  grid-column: 1 / -1;
+  min-height: 18px;
+  color: #909399;
+  font-size: 12px;
+}
+
+.upload-notice.uploading {
+  color: #409eff;
+}
+
+.upload-notice.success {
+  color: #67c23a;
+}
+
+.upload-notice.error {
+  color: #f56c6c;
+}
+
+.group-count-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #606266;
+  font-size: 12px;
+}
+
+.group-count-field input {
+  width: 72px;
+  height: 32px;
+  min-height: 32px;
+  padding: 0 8px;
 }
 
 .material-toolbar {
@@ -1002,6 +1271,89 @@ td {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 12px;
+}
+
+.creative-item small {
+  display: block;
+  margin-top: 4px;
+  color: #909399;
+  font-size: 11px;
+}
+
+.asset-status {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 6px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-style: normal;
+  font-size: 11px;
+}
+
+.asset-status.pending {
+  color: #909399;
+  background: #f4f4f5;
+}
+
+.asset-status.uploading {
+  color: #409eff;
+  background: #ecf5ff;
+}
+
+.asset-status.uploaded {
+  color: #67c23a;
+  background: #f0f9eb;
+}
+
+.asset-status.error {
+  color: #f56c6c;
+  background: #fef0f0;
+}
+
+.asset-error {
+  display: block;
+  overflow: hidden;
+  margin-top: 4px;
+  color: #f56c6c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: normal;
+  font-size: 11px;
+}
+
+.creative-empty {
+  grid-column: 1 / -1;
+  padding: 10px;
+  color: #909399;
+  background: #fafafa;
+  border: 1px dashed #dcdfe6;
+  font-size: 12px;
+}
+
+.specified-picker {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px 10px;
+  max-height: 154px;
+  overflow: auto;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.specified-picker label {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 6px;
+  color: #606266;
+  font-size: 12px;
+}
+
+.specified-picker span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .library-table {
@@ -1183,6 +1535,10 @@ td {
   gap: 8px;
 }
 
+.user-selector {
+  position: relative;
+}
+
 .selector-label {
   color: #606266;
   white-space: nowrap;
@@ -1230,6 +1586,72 @@ td {
 .hidden-goals,
 .account-popover-list {
   display: none;
+}
+
+.account-popover-list.open {
+  position: absolute;
+  top: 40px;
+  left: 70px;
+  z-index: 100;
+  display: block;
+  width: 520px;
+  max-width: min(520px, calc(100vw - 32px));
+  padding: 12px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(31, 45, 61, 0.16);
+}
+
+.account-popover-head {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.account-search-input {
+  flex: 1;
+  height: 32px;
+  min-height: 32px;
+}
+
+.account-close-btn,
+.account-popover-actions button {
+  height: 32px;
+  padding: 0 10px;
+  color: #409eff;
+  border: 1px solid #dcdfe6;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.account-popover-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #606266;
+  font-size: 12px;
+}
+
+.account-popover-actions span {
+  flex: 1;
+}
+
+.account-popover-body {
+  max-height: 360px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.account-popover-list .account-line {
+  padding: 6px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.account-popover-list .account-line:hover {
+  background: #f5f7fa;
 }
 
 .rule-config-btn {

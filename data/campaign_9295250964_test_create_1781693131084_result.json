@@ -1,0 +1,255 @@
+{
+  "ok": true,
+  "source_campaign_id": 9295250964,
+  "advertiser_id": 39059876,
+  "started_at": "2026-06-17T10:45:22.377Z",
+  "campaign": {
+    "new_campaign_id": 9801112256,
+    "payload": {
+      "advertiser_id": 39059876,
+      "campaign_name": "API_FLOW_TEST_FINAL_20260617_184514",
+      "type": 19,
+      "day_budget": 0,
+      "ad_type": 0,
+      "bid_type": 0,
+      "auto_adjust": 1,
+      "auto_build": 1,
+      "auto_build_name_rule": {
+        "creative_name_rule": "系统自动搭建_[日期][序号]",
+        "unit_name_rule": "系统自动搭建_[日期][序号]"
+      },
+      "cap_roi_ratio": 0,
+      "cap_bid": 0,
+      "constrait_cpa": 0,
+      "auto_manage": 1
+    },
+    "response": {
+      "code": 0,
+      "data": {
+        "campaign_id": 9801112256
+      },
+      "message": "OK",
+      "request_id": "ENSAgIDgw5OYChjdAiDAir6p7TMo_uqUggk="
+    }
+  },
+  "unit": {
+    "source_unit_id": 27969965564,
+    "new_unit_id": 29205298637,
+    "payload": {
+      "put_status": 2,
+      "bid_type": 10,
+      "ocpx_action_type": 1011,
+      "roi_ratio": 0.832,
+      "scene_id": [
+        6,
+        7,
+        24
+      ],
+      "unit_type": 4,
+      "begin_time": "2026-06-17",
+      "schedule_time": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "day_budget": 0,
+      "schema_uri": "kwai://sogame/launch?appId=ks650770146195233654&from=dsp_kuaishou_default_w&extension=%7B%22callback%22%3A%22__CALLBACK_PARAM__%22%2C%22account_id%22%3A%22__ACCOUNTID__%22%2C%22campaign_id%22%3A%22__DID__%22%2C%22unit_id%22%3A%22__AID__%22%2C%22creative_id%22%3A%22__CID__%22%7D",
+      "show_mode": 2,
+      "smart_cover": false,
+      "asset_mining": false,
+      "extend_search": false,
+      "custom_mini_app_data": {
+        "mini_app_type": 2,
+        "mini_app_id_platform": "ks650770146195233654",
+        "bootstrap_page": "",
+        "bootstrap_params": ""
+      },
+      "target": {
+        "gender": 0,
+        "network": 0,
+        "media_source_type": 0,
+        "user_type": 0,
+        "shared_user": 0,
+        "behavior_type": 0,
+        "disable_installed_app_switch": 0,
+        "ip_type": 0,
+        "filter_converted_level": 0,
+        "platform_os": 0,
+        "filter_time_range": 0,
+        "auto_population": 0,
+        "intelli_extend_option": 0
+      },
+      "outer_loop_native": 1,
+      "quick_search": 0,
+      "target_explore": 0,
+      "unit_material_type": 2,
+      "advertiser_id": 39059876,
+      "campaign_id": 9801112256,
+      "unit_name": "系统自动搭建_202605284_api_test_1781693122369"
+    },
+    "response": {
+      "code": 0,
+      "data": {
+        "unit_id": 29205298637
+      },
+      "message": "OK",
+      "request_id": "ELSAgICg8rmpChiuBiCpjr6p7TMo86S_hAk="
+    }
+  },
+  "creative": {
+    "source_creative_id": 256903399462,
+    "source_unit_id": 27969965564,
+    "new_creative_id": 265933501661,
+    "payload": {
+      "photo_id": "5199405912397401206",
+      "creative_material_type": 1,
+      "new_expose_tag": [
+        {
+          "text": "爆款游戏",
+          "url": ""
+        },
+        {
+          "text": "全网火热",
+          "url": ""
+        }
+      ],
+      "outer_loop_native": 1,
+      "kol_user_type": 1,
+      "kol_user_id": 4219963433,
+      "recommendation": "开始游戏",
+      "advertiser_id": 39059876,
+      "unit_id": 29205298637,
+      "creative_name": "系统自动搭建_2026052823_api_test_1781693122369",
+      "action_bar_text": "试玩游戏",
+      "description": "你那么牛，你把第二关过了！"
+    },
+    "response": {
+      "code": 0,
+      "data": {
+        "creative_id": 265933501661
+      },
+      "message": "OK",
+      "request_id": "ELmAgIDA2b-oChjUBSDIs76p7TMoue2cmwk="
+    },
+    "attempt": 3
+  },
+  "errors": [
+    {
+      "stage": "creative",
+      "source_creative_id": 256931099823,
+      "source_unit_id": 27969965564,
+      "payload": {
+        "photo_id": "5211227913900825243",
+        "creative_material_type": 1,
+        "new_expose_tag": [
+          {
+            "text": "爆款游戏",
+            "url": ""
+          },
+          {
+            "text": "全网火热",
+            "url": ""
+          }
+        ],
+        "outer_loop_native": 1,
+        "kol_user_type": 1,
+        "kol_user_id": 4219963433,
+        "recommendation": "开始游戏",
+        "advertiser_id": 39059876,
+        "unit_id": 29205298637,
+        "creative_name": "系统自动搭建_2026052830_api_test_1781693122369",
+        "action_bar_text": "试玩游戏",
+        "description": "你那么牛，你把第二关过了！"
+      },
+      "response": {
+        "code": 401000,
+        "message": "原生视频库视频必须是广告主有效视频,photoId:5211227913900825243 kolUserId:4219963433",
+        "request_id": "ENGAgICw4oarChiECCCjlr6p7TMojs-siQk="
+      }
+    },
+    {
+      "stage": "creative",
+      "source_creative_id": 256931099723,
+      "source_unit_id": 27969965564,
+      "payload": {
+        "photo_id": "5237686563180769667",
+        "creative_material_type": 1,
+        "new_expose_tag": [
+          {
+            "text": "爆款游戏",
+            "url": ""
+          },
+          {
+            "text": "全网火热",
+            "url": ""
+          }
+        ],
+        "outer_loop_native": 1,
+        "kol_user_type": 1,
+        "kol_user_id": 4219963433,
+        "recommendation": "开始游戏",
+        "advertiser_id": 39059876,
+        "unit_id": 29205298637,
+        "creative_name": "系统自动搭建_2026052829_api_test_1781693122369",
+        "action_bar_text": "试玩游戏",
+        "description": "你那么牛，你把第二关过了！"
+      },
+      "response": {
+        "code": 401000,
+        "message": "原生视频库视频必须是广告主有效视频,photoId:5237686563180769667 kolUserId:4219963433",
+        "request_id": "ELWAgIDAvpOYChjAAyCWpb6p7TMolse4kgk="
+      }
+    },
+    {
+      "stage": "unit-status",
+      "response": {
+        "raw": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 404 – Not Found</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 – Not Found</h1><hr class=\"line\" /><p><b>Type</b> Status Report</p><p><b>Description</b> The origin server did not find a current representation for the target resource or is not willing to disclose that one exists.</p><hr class=\"line\" /><h3>Apache Tomcat/9.0.71</h3></body></html>"
+      }
+    }
+  ],
+  "campaign_status_response": {
+    "code": 0,
+    "data": {
+      "campaign_ids": [
+        9801112256
+      ],
+      "errors": [],
+      "campaign_id": null
+    },
+    "message": "OK",
+    "request_id": "ELmAgICwo5OYChjIBiCJxr6p7TMo8t3Cpgk="
+  },
+  "creative_status_response": {
+    "code": 0,
+    "data": {
+      "creative_ids": [
+        265933501661
+      ],
+      "errors": [],
+      "creative_id": null
+    },
+    "message": "OK",
+    "request_id": "ELqAgICQo5OYChjyBiCRy76p7TMo5aXOqQk="
+  },
+  "summary": {
+    "ok": true,
+    "advertiser_id": 39059876,
+    "source_campaign_id": 9295250964,
+    "new_campaign_id": 9801112256,
+    "new_unit_id": 29205298637,
+    "new_creative_id": 265933501661,
+    "put_status": 2,
+    "creative_attempt": 3,
+    "errors": 3,
+    "top_errors": [
+      {
+        "message": "原生视频库视频必须是广告主有效视频,photoId:5211227913900825243 kolUserId:4219963433",
+        "count": 1
+      },
+      {
+        "message": "原生视频库视频必须是广告主有效视频,photoId:5237686563180769667 kolUserId:4219963433",
+        "count": 1
+      },
+      {
+        "message": "unknown",
+        "count": 1
+      }
+    ]
+  }
+}

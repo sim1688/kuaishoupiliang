@@ -15,14 +15,19 @@ function loadEnv(file = path.join(__dirname, "..", ".env")) {
   }
 }
 
-loadEnv();
+const envFile = path.join(__dirname, "..", ".env");
+
+loadEnv(envFile);
 
 const config = {
+  envFile,
   port: Number(process.env.PORT || 4189),
+  authCallbackPort: Number(process.env.KUAISHOU_AUTH_CALLBACK_PORT || 8000),
   kuaishou: {
     baseUrl: process.env.KUAISHOU_API_BASE || "https://ad.e.kuaishou.com",
     appId: process.env.KUAISHOU_APP_ID || "",
     secret: process.env.KUAISHOU_SECRET || "",
+    authUserId: process.env.KUAISHOU_AUTH_USER_ID || "",
     accessToken: process.env.KUAISHOU_ACCESS_TOKEN || "",
     refreshToken: process.env.KUAISHOU_REFRESH_TOKEN || "",
     advertiserId: process.env.KUAISHOU_ADVERTISER_ID || ""

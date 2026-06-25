@@ -1,0 +1,16 @@
+{
+  "advertiser_id": "39059876",
+  "asset_id": "AI片头+游戏/0430片头+第一关 (22).mp4:19858033:1777528665046",
+  "file_name": "0430片头+第一关 (22).mp4",
+  "photo_id": "5256263915168399032",
+  "response": {
+    "code": 0,
+    "data": {
+      "photo_id": "5256263915168399032",
+      "signature": "4b5b0057bb924df9b838c31b9176c087",
+      "photoId": "5256263915168399032"
+    },
+    "message": "OK",
+    "request_id": "ELmAgIDA-6CpChjuAiCK2rzE7zMojte9xgU="
+  }
+}
