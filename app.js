@@ -1131,11 +1131,17 @@ function renderCreateResult(result, error) {
   const resultFile = detail.result_file || "";
   const campaignPayload = detail.campaign && detail.campaign.payload ? detail.campaign.payload : {};
   const unitPayload = detail.unit && detail.unit.payload ? detail.unit.payload : {};
-  const createdCreatives = Array.isArray(detail.creatives) && detail.creatives.length
-    ? detail.creatives
-    : (detail.creative ? [detail.creative] : []);
+  const advancedCreative = detail.advanced_program_creative || null;
+  const createdCreatives = advancedCreative
+    ? [advancedCreative]
+    : (Array.isArray(detail.creatives) && detail.creatives.length ? detail.creatives : (detail.creative ? [detail.creative] : []));
   const creativePayload = createdCreatives[0] && createdCreatives[0].payload ? createdCreatives[0].payload : {};
-  const creativeIds = createdCreatives.map((item) => item.new_creative_id).filter(Boolean);
+  const creativeIds = advancedCreative
+    ? (advancedCreative.new_creative_ids || [])
+    : createdCreatives.map((item) => item.new_creative_id).filter(Boolean);
+  const creativeMode = data.creative_mode || (advancedCreative ? "advanced_program" : "standard");
+  const materialCount = data.material_count || (advancedCreative ? advancedCreative.material_count : createdCreatives.length);
+  const photoIds = advancedCreative ? (advancedCreative.photo_ids || []) : createdCreatives.map((item) => item.photo_id).filter(Boolean);
   const miniAppData = unitPayload.custom_mini_app_data || {};
   box.className = "create-result success";
   box.innerHTML = `
@@ -1143,12 +1149,15 @@ function renderCreateResult(result, error) {
     <span>账户：${escapeHtml(data.advertiser_id || "")}</span>
     <span>计划：${escapeHtml(data.new_campaign_id || "")}</span>
     <span>广告组：${escapeHtml(data.new_unit_id || "")}</span>
-    <span>创意：${escapeHtml(creativeIds.join(", ") || data.new_creative_id || "")}</span>
-    <span>创意数：${escapeHtml(data.creatives_created || creativeIds.length || "")}</span>
+    <span>创建模式：${creativeMode === "advanced_program" ? "程序化创意包" : "普通创意"}</span>
+    <span>${creativeMode === "advanced_program" ? "程序化创意包" : "创意"}：${escapeHtml(creativeIds.join(", ") || data.new_creative_id || data.package_name || "")}</span>
+    <span>${creativeMode === "advanced_program" ? "程序化创意包数" : "创意数"}：${escapeHtml(data.creatives_created || creativeIds.length || "")}</span>
+    <span>素材数：${escapeHtml(materialCount || "")}</span>
     <span>状态：put_status=${escapeHtml(data.put_status || "")}</span>
     <span>计划名：${escapeHtml(campaignPayload.campaign_name || "")}</span>
     <span>广告组名：${escapeHtml(unitPayload.unit_name || "")}</span>
-    <span>创意名：${escapeHtml(creativePayload.creative_name || "")}${createdCreatives.length > 1 ? " 等" : ""}</span>
+    <span>创意名：${escapeHtml(creativePayload.creative_name || creativePayload.package_name || data.package_name || "")}${createdCreatives.length > 1 && creativeMode !== "advanced_program" ? " 等" : ""}</span>
+    ${photoIds.length ? `<span>素材 photo_id：${escapeHtml(photoIds.join(", "))}</span>` : ""}
     <span>ROI：${escapeHtml(unitPayload.roi_ratio || "")}</span>
     <span>推广目标：${escapeHtml(miniAppData.mini_app_id_platform || "")}</span>
     <span>单元规则：${escapeHtml(campaignPayload.auto_build_name_rule && campaignPayload.auto_build_name_rule.unit_name_rule || "")}</span>
@@ -1223,6 +1232,8 @@ async function realCreateTestFromPage() {
   const uploadedAsset = uploadedAssetInputs[0] && uploadedAssetInputs[0].asset;
   const firstAssignedAsset = currentGroupAssets[0] || {};
   const configuredNames = buildConfiguredNames(account, firstAssignedAsset, 1);
+  const copies = getCopies();
+  const firstCopy = copies[0] || "";
   if (!promotionTargetConfig.appId) {
     const message = "请先在广告组基本信息里填写推广目标 APPID";
     showToast(message);
@@ -1259,8 +1270,14 @@ async function realCreateTestFromPage() {
         creative_assets: uploadedAssetInputs.map((item, index) => ({
           photo_id: item.photoId,
           creative_name: buildConfiguredNames(account, item.localAsset, index + 1).creativeName,
-          asset_name: item.localAsset.name || item.asset.name || ""
+          asset_name: item.localAsset.name || item.asset.name || "",
+          width: item.localAsset.width || item.asset.width,
+          height: item.localAsset.height || item.asset.height,
+          creative_material_type: item.localAsset.creative_material_type || item.asset.creative_material_type
         })),
+        advanced_program: uploadedAssetInputs.length > 1,
+        action_bar: $("#cta").value,
+        description: firstCopy || $("#reason").value,
         put_status: 2,
         max_units: 1,
         max_creative_attempts: 60,

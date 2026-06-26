@@ -19,6 +19,7 @@ const {
   createCampaign,
   createUnit,
   createCreative,
+  createAdvancedProgramCreative,
   updateCampaignStatus,
   updateUnitStatus,
   updateCreativeStatus,
@@ -27,7 +28,7 @@ const {
 const { uploadAdVideo } = require("./backend/kuaishouMaterialService");
 
 const root = __dirname;
-const BUILD_VERSION = "20260624-grouped-creative-assets";
+const BUILD_VERSION = "20260625-advanced-program-creative";
 const corsHeaders = {
   "access-control-allow-origin": "*",
   "access-control-allow-methods": "GET,POST,OPTIONS",
@@ -463,6 +464,9 @@ async function handleApi(req, res) {
       photoId: firstDefined(body.photo_id, body.photoId),
       photoIds: firstDefined(body.photo_ids, body.photoIds),
       creativeAssets: firstDefined(body.creative_assets, body.creativeAssets),
+      advancedProgram: firstDefined(body.advanced_program, body.advancedProgram),
+      actionBar: firstDefined(body.action_bar, body.actionBar, body.action_bar_text, body.actionBarText),
+      description: firstDefined(body.description, body.caption, body.copy),
       promotionTargetType: firstDefined(body.promotion_target_type, body.promotionTargetType, body.promotionTarget && body.promotionTarget.type),
       miniAppIdPlatform: firstDefined(
         body.mini_app_id_platform,
@@ -556,6 +560,13 @@ async function handleApi(req, res) {
   if (req.method === "POST" && url.pathname === "/api/kuaishou/creative/create") {
     const body = await readBody(req);
     const result = await createCreative(body.payload || body);
+    sendJson(res, 200, { ok: true, data: result });
+    return;
+  }
+
+  if (req.method === "POST" && url.pathname === "/api/kuaishou/creative/advanced-program/create") {
+    const body = await readBody(req);
+    const result = await createAdvancedProgramCreative(body.payload || body);
     sendJson(res, 200, { ok: true, data: result });
     return;
   }

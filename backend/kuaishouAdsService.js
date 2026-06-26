@@ -39,6 +39,8 @@ const creativeCreateKeys = [
   "recommendation"
 ];
 
+const advancedProgramMaxPhotos = 5;
+
 function cloneJson(value) {
   if (value === undefined) return undefined;
   return JSON.parse(JSON.stringify(value));
@@ -100,6 +102,31 @@ function optionalNumber(value) {
   return Number.isFinite(numberValue) ? numberValue : undefined;
 }
 
+function optionalBoolean(value) {
+  if (value === undefined || value === null || value === "") return false;
+  if (typeof value === "boolean") return value;
+  return ["1", "true", "yes", "on"].includes(String(value).trim().toLowerCase());
+}
+
+function truncateText(value, maxLength) {
+  const text = String(value || "").trim();
+  if (!maxLength || text.length <= maxLength) return text;
+  return text.slice(0, maxLength);
+}
+
+function normalizeStringList(value) {
+  const list = Array.isArray(value) ? value : [value];
+  const seen = {};
+  return list
+    .map((item) => String(item === undefined || item === null ? "" : item).trim())
+    .filter(Boolean)
+    .filter((item) => {
+      if (seen[item]) return false;
+      seen[item] = true;
+      return true;
+    });
+}
+
 function normalizePhotoIdItems(options) {
   const items = [];
   const creativeAssets = Array.isArray(options.creativeAssets || options.creative_assets)
@@ -112,7 +139,15 @@ function normalizePhotoIdItems(options) {
     items.push({
       photoId: String(photoId),
       creativeName: firstDefined(asset.creative_name, asset.creativeName),
-      assetName: firstDefined(asset.asset_name, asset.assetName, asset.name)
+      assetName: firstDefined(asset.asset_name, asset.assetName, asset.name),
+      creativeMaterialType: optionalNumber(firstDefined(
+        asset.creative_material_type,
+        asset.creativeMaterialType,
+        asset.material_type,
+        asset.materialType
+      )),
+      width: optionalNumber(firstDefined(asset.width, asset.video_width, asset.videoWidth)),
+      height: optionalNumber(firstDefined(asset.height, asset.video_height, asset.videoHeight))
     });
   });
   const photoIds = Array.isArray(options.photoIds || options.photo_ids) ? options.photoIds || options.photo_ids : [];
@@ -443,6 +478,19 @@ async function createCreative(payload) {
   };
 }
 
+async function createAdvancedProgramCreative(payload) {
+  const result = await kuaishouRequest("/rest/openapi/v2/creative/advanced/program/create", {
+    method: "POST",
+    body: payload
+  });
+  assertSuccess(result, "create advanced program creative");
+  return {
+    result,
+    details: result && result.data && Array.isArray(result.data.details) ? result.data.details : [],
+    creative_id: getResultId(result, "creative_id")
+  };
+}
+
 async function updateCampaignStatus(advertiserId, campaignIds, putStatus) {
   const ids = Array.isArray(campaignIds) ? campaignIds : [campaignIds];
   const result = await kuaishouRequest("/rest/openapi/v1/campaign/update/status", {
@@ -502,6 +550,108 @@ function summarizeErrors(errors) {
     .map((message) => ({ message, count: counts[message] }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 10);
+}
+
+function isHorizontalCreativeTarget(target) {
+  const materialType = optionalNumber(firstDefined(target.creativeMaterialType, target.creative_material_type));
+  if (materialType === 2) return true;
+  if (materialType === 1) return false;
+  const width = optionalNumber(target.width);
+  const height = optionalNumber(target.height);
+  return Boolean(width && height && width > height);
+}
+
+function extractCreativeIdsFromAdvancedProgramResponse(result) {
+  const ids = [];
+  const details = result && result.data && Array.isArray(result.data.details) ? result.data.details : [];
+  details.forEach((detail) => {
+    if (!detail) return;
+    if (detail.creative_id) ids.push(detail.creative_id);
+    if (Array.isArray(detail.creatives)) {
+      detail.creatives.forEach((creative) => {
+        if (creative && creative.creative_id) ids.push(creative.creative_id);
+      });
+    }
+  });
+  const singleId = getResultId(result, "creative_id");
+  if (singleId) ids.push(singleId);
+  return normalizeStringList(ids);
+}
+
+function buildAdvancedProgramCreativePayload(options) {
+  const allTargets = normalizePhotoIdItems(options);
+  if (allTargets.length > advancedProgramMaxPhotos) {
+    const error = new Error(`程序化创意2.0最多支持 ${advancedProgramMaxPhotos} 个视频素材，请减少单创意组素材数量`);
+    error.status = 400;
+    throw error;
+  }
+  const targets = allTargets.slice(0, advancedProgramMaxPhotos);
+  const horizontalPhotoIds = [];
+  const verticalPhotoIds = [];
+  targets.forEach((target) => {
+    const list = isHorizontalCreativeTarget(target) ? horizontalPhotoIds : verticalPhotoIds;
+    list.push(String(target.photoId));
+  });
+
+  const description = truncateText(firstDefined(options.description, options.copy, options.caption), 30);
+  const caption = description || "你那么牛，你把第二关过了！";
+  const actionBar = truncateText(firstDefined(options.actionBar, options.action_bar, options.actionBarText, options.action_bar_text), 20)
+    || "试玩游戏";
+
+  const payload = compactObject({
+    advertiser_id: Number(options.advertiserId || options.advertiser_id),
+    unit_id: Number(options.unitId || options.unit_id),
+    package_name: suffixName(firstDefined(options.packageName, options.package_name, options.creativeName, options.creative_name), ""),
+    horizontal_photo_ids: horizontalPhotoIds,
+    vertical_photo_ids: verticalPhotoIds,
+    action_bar: actionBar,
+    captions: [caption]
+  });
+  payload.cover_image_tokens = [];
+
+  const newExposeTag = firstDefined(options.newExposeTag, options.new_expose_tag);
+  if (newExposeTag) payload.new_expose_tag = cloneJson(newExposeTag);
+
+  if (!payload.horizontal_photo_ids && !payload.vertical_photo_ids) {
+    const error = new Error("程序化创意需要至少 1 个已上传素材 photo_id");
+    error.status = 400;
+    throw error;
+  }
+
+  return {
+    payload,
+    targets,
+    material_count: targets.length
+  };
+}
+
+async function pauseTestCreatedEntities(result, advertiserId, campaignId, putStatus) {
+  if (Number(putStatus) !== 2) return;
+  if (campaignId && !result.campaign_status_response) {
+    try {
+      result.campaign_status_response = await updateCampaignStatus(advertiserId, [campaignId], 2);
+    } catch (error) {
+      result.errors.push({ stage: "campaign-status", response: error.body || { message: error.message } });
+    }
+  }
+  if (result.unit && result.unit.new_unit_id && !result.unit_status_response) {
+    try {
+      result.unit_status_response = await updateUnitStatus(advertiserId, [result.unit.new_unit_id], 2);
+    } catch (error) {
+      result.errors.push({ stage: "unit-status", response: error.body || { message: error.message } });
+    }
+  }
+  const creativeIds = result.creatives
+    .map((creative) => creative.new_creative_id)
+    .concat(result.advanced_program_creative ? result.advanced_program_creative.new_creative_ids || [] : [])
+    .filter(Boolean);
+  if (creativeIds.length && !result.creative_status_response) {
+    try {
+      result.creative_status_response = await updateCreativeStatus(advertiserId, creativeIds, 2);
+    } catch (error) {
+      result.errors.push({ stage: "creative-status", response: error.body || { message: error.message } });
+    }
+  }
 }
 
 async function cloneCampaignFromSnapshot(snapshot, options) {
@@ -618,6 +768,13 @@ async function cloneCampaignFromSnapshot(snapshot, options) {
         result.errors.push({ stage: "creative-status", response: error.body || { message: error.message } });
       }
     }
+    if (result.creatives.length !== creativeTargets.length) {
+      await pauseTestCreatedEntities(result, advertiser_id, newCampaignId, putStatus);
+      throw Object.assign(new Error("No standard creative could be created for every requested material"), {
+        status: 502,
+        body: result
+      });
+    }
   }
 
   result.summary = {
@@ -655,6 +812,18 @@ async function testCreateCampaignFlow(advertiserId, sourceCampaignId, options) {
   const putStatus = Number(options.putStatus || 2);
   const sourceSnapshot = await getCampaignSnapshot(advertiser_id, source_campaign_id);
   const nameSuffix = options.nameSuffix || `_api_test_${Date.now()}`;
+  const photoIdItems = normalizePhotoIdItems(options);
+  const useAdvancedProgramCreative = photoIdItems.length > 1 || optionalBoolean(firstDefined(
+    options.advancedProgram,
+    options.advanced_program,
+    options.programmaticCreative,
+    options.programmatic_creative
+  ));
+  if (useAdvancedProgramCreative && photoIdItems.length > advancedProgramMaxPhotos) {
+    const error = new Error(`程序化创意2.0最多支持 ${advancedProgramMaxPhotos} 个视频素材，请减少单创意组素材数量`);
+    error.status = 400;
+    throw error;
+  }
   const plan = buildClonePlan(sourceSnapshot, {
     advertiserId: advertiser_id,
     putStatus,
@@ -680,6 +849,7 @@ async function testCreateCampaignFlow(advertiserId, sourceCampaignId, options) {
     unit: null,
     creative: null,
     creatives: [],
+    advanced_program_creative: null,
     errors: []
   };
 
@@ -706,6 +876,9 @@ async function testCreateCampaignFlow(advertiserId, sourceCampaignId, options) {
       unitPayload.custom_mini_app_data.mini_app_id_platform = miniAppIdPlatform;
       unitPayload.custom_mini_app_data.mini_app_type = optionalNumber(firstDefined(options.miniAppType, options.mini_app_type)) || 2;
       unitPayload.schema_uri = replaceSchemaAppId(unitPayload.schema_uri, miniAppIdPlatform);
+    }
+    if (useAdvancedProgramCreative) {
+      unitPayload.unit_type = 7;
     }
     try {
       const unitCreate = await createUnit(unitPayload);
@@ -738,99 +911,147 @@ async function testCreateCampaignFlow(advertiserId, sourceCampaignId, options) {
     .filter((creativePlan) => String(creativePlan.source_unit_id) === sourceUnitId)
     .concat(plan.creatives.filter((creativePlan) => String(creativePlan.source_unit_id) !== sourceUnitId));
   const maxCreativeAttempts = Math.max(1, Number(options.maxCreativeAttempts || 40));
-  const photoIdItems = normalizePhotoIdItems(options);
   const creativeTargets = photoIdItems.length ? photoIdItems : [{}];
 
-  for (let targetIndex = 0; targetIndex < creativeTargets.length; targetIndex += 1) {
-    const target = creativeTargets[targetIndex];
+  if (useAdvancedProgramCreative) {
+    if (!photoIdItems.length) {
+      throw Object.assign(new Error("程序化创意模式需要已上传素材 photo_id"), {
+        status: 400,
+        body: result
+      });
+    }
     let created = null;
     for (let index = 0; index < candidateCreatives.length && index < maxCreativeAttempts; index += 1) {
       const creativePlan = candidateCreatives[index];
-      const creativePayload = Object.assign({}, creativePlan.payload, {
-        unit_id: result.unit.new_unit_id
-      });
-      const configuredCreativeName = firstDefined(target.creativeName, options.creativeName);
-      if (configuredCreativeName) {
-        creativePayload.creative_name = targetIndex > 0 && !target.creativeName
-          ? indexedName(configuredCreativeName, targetIndex)
-          : suffixName(configuredCreativeName, "");
-      }
-      if (target.photoId) creativePayload.photo_id = String(target.photoId);
-      delete creativePayload.image_token;
+      const sourcePayload = creativePlan.payload || {};
+      const buildResult = buildAdvancedProgramCreativePayload(Object.assign({}, sourcePayload, options, {
+        advertiserId: advertiser_id,
+        unitId: result.unit.new_unit_id,
+        creativeAssets: options.creativeAssets || options.creative_assets,
+        photoIds: options.photoIds || options.photo_ids,
+        photoId: options.photoId || options.photo_id,
+        packageName: firstDefined(options.packageName, options.package_name, options.creativeName, sourcePayload.creative_name),
+        creativeName: firstDefined(options.creativeName, sourcePayload.creative_name),
+        actionBar: firstDefined(options.actionBar, options.action_bar, sourcePayload.action_bar_text, sourcePayload.recommendation),
+        description: firstDefined(options.description, options.copy, sourcePayload.description),
+        newExposeTag: firstDefined(options.newExposeTag, options.new_expose_tag, sourcePayload.new_expose_tag)
+      }));
+      const creativePayload = buildResult.payload;
       try {
-        const creativeCreate = await createCreative(creativePayload);
+        const advancedCreate = await createAdvancedProgramCreative(creativePayload);
+        const creativeIds = extractCreativeIdsFromAdvancedProgramResponse(advancedCreate.result);
         created = {
           source_creative_id: creativePlan.source_creative_id,
           source_unit_id: creativePlan.source_unit_id,
-          new_creative_id: creativeCreate.creative_id,
-          photo_id: creativePayload.photo_id,
-          asset_name: target.assetName,
+          new_unit_id: result.unit.new_unit_id,
+          package_name: creativePayload.package_name,
+          material_count: buildResult.material_count,
+          photo_ids: buildResult.targets.map((item) => item.photoId),
+          new_creative_ids: creativeIds,
           payload: creativePayload,
-          response: creativeCreate.result,
+          response: advancedCreate.result,
           attempt: index + 1
         };
-        result.creatives.push(created);
-        if (!result.creative) result.creative = created;
+        result.advanced_program_creative = created;
+        result.creative = created;
         break;
       } catch (error) {
         result.errors.push({
-          stage: "creative",
+          stage: "advanced-program-creative",
           source_creative_id: creativePlan.source_creative_id,
           source_unit_id: creativePlan.source_unit_id,
-          target_index: targetIndex + 1,
-          photo_id: target.photoId,
           payload: creativePayload,
           response: error.body || { message: error.message }
         });
       }
     }
-    if (!created && target.photoId) {
-      result.errors.push({
-        stage: "creative-target",
-        target_index: targetIndex + 1,
-        photo_id: target.photoId,
-        response: { message: "No creative could be created for this photo_id" }
+    if (!created) {
+      await pauseTestCreatedEntities(result, advertiser_id, newCampaignId, putStatus);
+      throw Object.assign(new Error("No advanced program creative could be created"), {
+        status: 502,
+        body: result
       });
     }
-  }
-
-  if (putStatus === 2) {
-    try {
-      result.campaign_status_response = await updateCampaignStatus(advertiser_id, [newCampaignId], 2);
-    } catch (error) {
-      result.errors.push({ stage: "campaign-status", response: error.body || { message: error.message } });
-    }
-    if (result.unit && result.unit.new_unit_id) {
-      try {
-        result.unit_status_response = await updateUnitStatus(advertiser_id, [result.unit.new_unit_id], 2);
-      } catch (error) {
-        result.errors.push({ stage: "unit-status", response: error.body || { message: error.message } });
+  } else {
+    for (let targetIndex = 0; targetIndex < creativeTargets.length; targetIndex += 1) {
+      const target = creativeTargets[targetIndex];
+      let created = null;
+      for (let index = 0; index < candidateCreatives.length && index < maxCreativeAttempts; index += 1) {
+        const creativePlan = candidateCreatives[index];
+        const creativePayload = Object.assign({}, creativePlan.payload, {
+          unit_id: result.unit.new_unit_id
+        });
+        const configuredCreativeName = firstDefined(target.creativeName, options.creativeName);
+        if (configuredCreativeName) {
+          creativePayload.creative_name = targetIndex > 0 && !target.creativeName
+            ? indexedName(configuredCreativeName, targetIndex)
+            : suffixName(configuredCreativeName, "");
+        }
+        if (target.photoId) creativePayload.photo_id = String(target.photoId);
+        delete creativePayload.image_token;
+        try {
+          const creativeCreate = await createCreative(creativePayload);
+          created = {
+            source_creative_id: creativePlan.source_creative_id,
+            source_unit_id: creativePlan.source_unit_id,
+            new_creative_id: creativeCreate.creative_id,
+            photo_id: creativePayload.photo_id,
+            asset_name: target.assetName,
+            payload: creativePayload,
+            response: creativeCreate.result,
+            attempt: index + 1
+          };
+          result.creatives.push(created);
+          if (!result.creative) result.creative = created;
+          break;
+        } catch (error) {
+          result.errors.push({
+            stage: "creative",
+            source_creative_id: creativePlan.source_creative_id,
+            source_unit_id: creativePlan.source_unit_id,
+            target_index: targetIndex + 1,
+            photo_id: target.photoId,
+            payload: creativePayload,
+            response: error.body || { message: error.message }
+          });
+        }
+      }
+      if (!created && target.photoId) {
+        result.errors.push({
+          stage: "creative-target",
+          target_index: targetIndex + 1,
+          photo_id: target.photoId,
+          response: { message: "No creative could be created for this photo_id" }
+        });
       }
     }
-    const creativeIds = result.creatives.map((creative) => creative.new_creative_id).filter(Boolean);
-    if (creativeIds.length) {
-      try {
-        result.creative_status_response = await updateCreativeStatus(advertiser_id, creativeIds, 2);
-      } catch (error) {
-        result.errors.push({ stage: "creative-status", response: error.body || { message: error.message } });
-      }
-    }
   }
 
-  result.ok = Boolean(result.campaign && result.unit && result.creatives.length === creativeTargets.length);
+  await pauseTestCreatedEntities(result, advertiser_id, newCampaignId, putStatus);
+
+  const advancedProgramCreated = Boolean(result.advanced_program_creative);
+  const standardCreativeIds = result.creatives.map((creative) => creative.new_creative_id).filter(Boolean);
+  const advancedCreativeIds = result.advanced_program_creative ? result.advanced_program_creative.new_creative_ids : [];
+  result.ok = Boolean(result.campaign && result.unit && (
+    useAdvancedProgramCreative ? advancedProgramCreated : result.creatives.length === creativeTargets.length
+  ));
   result.summary = {
     ok: result.ok,
+    creative_mode: useAdvancedProgramCreative ? "advanced_program" : "standard",
     advertiser_id,
     source_campaign_id,
     new_campaign_id: newCampaignId,
     new_unit_id: result.unit && result.unit.new_unit_id,
-    new_creative_id: result.creative && result.creative.new_creative_id,
-    new_creative_ids: result.creatives.map((creative) => creative.new_creative_id).filter(Boolean),
+    new_creative_id: result.creative && (result.creative.new_creative_id || (result.creative.new_creative_ids && result.creative.new_creative_ids[0])),
+    new_creative_ids: useAdvancedProgramCreative ? advancedCreativeIds : standardCreativeIds,
+    advanced_program_creative_ids: advancedCreativeIds,
     campaign_name: result.campaign && result.campaign.payload && result.campaign.payload.campaign_name,
     unit_name: result.unit && result.unit.payload && result.unit.payload.unit_name,
-    creative_name: result.creative && result.creative.payload && result.creative.payload.creative_name,
-    creatives_requested: creativeTargets.length,
-    creatives_created: result.creatives.length,
+    creative_name: result.creative && result.creative.payload && (result.creative.payload.creative_name || result.creative.payload.package_name),
+    package_name: result.advanced_program_creative && result.advanced_program_creative.package_name,
+    creatives_requested: useAdvancedProgramCreative ? 1 : creativeTargets.length,
+    creatives_created: useAdvancedProgramCreative ? (advancedProgramCreated ? 1 : 0) : result.creatives.length,
+    material_count: useAdvancedProgramCreative ? photoIdItems.length : result.creatives.length,
     roi_ratio: result.unit && result.unit.payload && result.unit.payload.roi_ratio,
     put_status: putStatus,
     creative_attempt: result.creative && result.creative.attempt,
@@ -888,6 +1109,7 @@ module.exports = {
   createCampaign,
   createUnit,
   createCreative,
+  createAdvancedProgramCreative,
   updateCampaignStatus,
   updateUnitStatus,
   updateCreativeStatus,

@@ -1,0 +1,89 @@
+{
+  "version": "20260625-advanced-program-creative",
+  "received": {
+    "creative_name": "程序化创意包_3素材_20260625002",
+    "description": "你那么牛，你把第二关过了！",
+    "photo_id": "5210946441513096231",
+    "mini_app_id_platform": "ks718887093947331149",
+    "start_date": "2026-06-25",
+    "creative_assets": [
+      {
+        "creative_name": "程序化创意包_3素材_20260625002",
+        "photo_id": "5210946441513096231",
+        "asset_name": "0430片头+第二关 (6)"
+      },
+      {
+        "creative_name": "程序化创意包_3素材_20260625002",
+        "photo_id": "5194057946974772459",
+        "asset_name": "0430片头+第一关 (23)"
+      },
+      {
+        "creative_name": "程序化创意包_3素材_20260625002",
+        "photo_id": "5215450043993408898",
+        "asset_name": "0430片头+第二关 (10)"
+      }
+    ],
+    "mini_app_type": 2,
+    "save_files": true,
+    "max_creative_attempts": 2,
+    "action_bar": "试玩游戏",
+    "campaign_name": "程序化创意测试_20260625002",
+    "promotion_target_type": "miniGame",
+    "advanced_program": true,
+    "creative_rule": "<账户备注><素材名>",
+    "unit_name": "程序化创意测试_20260625002",
+    "max_units": 1,
+    "source_campaign_id": 9295250964,
+    "advertiser_id": 39059876,
+    "put_status": 2,
+    "roi_ratio": "0.77",
+    "group_rule": "开荒之旅_[日期][序号]",
+    "photo_ids": [
+      "5210946441513096231",
+      "5194057946974772459",
+      "5215450043993408898"
+    ]
+  },
+  "options": {
+    "campaignName": "程序化创意测试_20260625002",
+    "startDate": "2026-06-25",
+    "putStatus": 2,
+    "unitName": "程序化创意测试_20260625002",
+    "creativeName": "程序化创意包_3素材_20260625002",
+    "unitNameRule": "开荒之旅_[日期][序号]",
+    "creativeNameRule": "<账户备注><素材名>",
+    "roiRatio": "0.77",
+    "photoId": "5210946441513096231",
+    "photoIds": [
+      "5210946441513096231",
+      "5194057946974772459",
+      "5215450043993408898"
+    ],
+    "creativeAssets": [
+      {
+        "creative_name": "程序化创意包_3素材_20260625002",
+        "photo_id": "5210946441513096231",
+        "asset_name": "0430片头+第二关 (6)"
+      },
+      {
+        "creative_name": "程序化创意包_3素材_20260625002",
+        "photo_id": "5194057946974772459",
+        "asset_name": "0430片头+第一关 (23)"
+      },
+      {
+        "creative_name": "程序化创意包_3素材_20260625002",
+        "photo_id": "5215450043993408898",
+        "asset_name": "0430片头+第二关 (10)"
+      }
+    ],
+    "advancedProgram": true,
+    "actionBar": "试玩游戏",
+    "description": "你那么牛，你把第二关过了！",
+    "promotionTargetType": "miniGame",
+    "miniAppIdPlatform": "ks718887093947331149",
+    "miniAppType": 2,
+    "maxUnits": 1,
+    "maxCreativeAttempts": 2,
+    "saveFiles": true
+  }
+}

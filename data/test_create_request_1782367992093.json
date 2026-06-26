@@ -1,0 +1,83 @@
+{
+  "version": "20260624-grouped-creative-assets",
+  "received": {
+    "advertiser_id": 39059876,
+    "source_campaign_id": 9295250964,
+    "campaign_name": "开荒之旅_20260625001",
+    "unit_name": "开荒之旅_20260625001",
+    "creative_name": "大师爱闯关0430片头+第二关 (6)",
+    "group_rule": "开荒之旅_[日期][序号]",
+    "creative_rule": "<账户备注><素材名>",
+    "roi_ratio": "0.77",
+    "promotion_target_type": "miniGame",
+    "mini_app_id_platform": "ks718887093947331149",
+    "mini_app_type": 2,
+    "start_date": "2026-06-25",
+    "photo_id": "5210946441513096231",
+    "photo_ids": [
+      "5210946441513096231",
+      "5194057946974772459",
+      "5215450043993408898"
+    ],
+    "creative_assets": [
+      {
+        "photo_id": "5210946441513096231",
+        "creative_name": "大师爱闯关0430片头+第二关 (6)",
+        "asset_name": "0430片头+第二关 (6)"
+      },
+      {
+        "photo_id": "5194057946974772459",
+        "creative_name": "大师爱闯关0430片头+第一关 (23)",
+        "asset_name": "0430片头+第一关 (23)"
+      },
+      {
+        "photo_id": "5215450043993408898",
+        "creative_name": "大师爱闯关0430片头+第二关 (10)",
+        "asset_name": "0430片头+第二关 (10)"
+      }
+    ],
+    "put_status": 2,
+    "max_units": 1,
+    "max_creative_attempts": 60,
+    "save_files": true
+  },
+  "options": {
+    "campaignName": "开荒之旅_20260625001",
+    "startDate": "2026-06-25",
+    "putStatus": 2,
+    "unitName": "开荒之旅_20260625001",
+    "creativeName": "大师爱闯关0430片头+第二关 (6)",
+    "unitNameRule": "开荒之旅_[日期][序号]",
+    "creativeNameRule": "<账户备注><素材名>",
+    "roiRatio": "0.77",
+    "photoId": "5210946441513096231",
+    "photoIds": [
+      "5210946441513096231",
+      "5194057946974772459",
+      "5215450043993408898"
+    ],
+    "creativeAssets": [
+      {
+        "photo_id": "5210946441513096231",
+        "creative_name": "大师爱闯关0430片头+第二关 (6)",
+        "asset_name": "0430片头+第二关 (6)"
+      },
+      {
+        "photo_id": "5194057946974772459",
+        "creative_name": "大师爱闯关0430片头+第一关 (23)",
+        "asset_name": "0430片头+第一关 (23)"
+      },
+      {
+        "photo_id": "5215450043993408898",
+        "creative_name": "大师爱闯关0430片头+第二关 (10)",
+        "asset_name": "0430片头+第二关 (10)"
+      }
+    ],
+    "promotionTargetType": "miniGame",
+    "miniAppIdPlatform": "ks718887093947331149",
+    "miniAppType": 2,
+    "maxUnits": 1,
+    "maxCreativeAttempts": 60,
+    "saveFiles": true
+  }
+}

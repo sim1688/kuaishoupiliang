@@ -79,13 +79,14 @@ POST /api/kuaishou/creative/status
 4. 创建计划：`/rest/openapi/gw/dsp/campaign/create`
 5. 创建广告组：`/rest/openapi/gw/dsp/unit/create`
 6. 创建创意：`/rest/openapi/gw/dsp/creative/create`
-7. 暂停计划：`/rest/openapi/v1/campaign/update/status`
-8. 暂停广告组：`/rest/openapi/v1/unit/update/status`
-9. 暂停创意：`/rest/openapi/v1/creative/update/status`
+7. 多素材创建程序化创意包：`/rest/openapi/v2/creative/advanced/program/create`
+8. 暂停计划：`/rest/openapi/v1/campaign/update/status`
+9. 暂停广告组：`/rest/openapi/v1/unit/update/status`
+10. 暂停创意：`/rest/openapi/v1/creative/update/status`
 
 复制计划时，后台会先生成可创建 payload，再按计划、广告组、创意顺序创建。默认 `put_status=2`，也就是暂停状态。
 
-`/api/kuaishou/campaign/test-create-flow` 用于最小真实创建联调：从一个源计划学习字段，只创建 1 个计划、1 个广告组、1 条可用创意，并默认全部暂停。它会在部分原生视频不可复用时自动尝试后续创意。
+`/api/kuaishou/campaign/test-create-flow` 用于最小真实创建联调：从一个源计划学习字段，只创建 1 个计划、1 个广告组，并默认全部暂停。单素材走普通创意接口；同一创意组选择多个已上传素材时，广告组会切成 `unit_type=7`，并只创建 1 个程序化创意包，包内包含这些 `photo_id`。程序化创意2.0最多支持 5 个视频素材，超过会直接拦截。
 
 ## 重要限制
 
