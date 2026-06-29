@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:4189";
+const API_BASE = window.location.origin;
 
 let accounts = [
   { id: "112939731", name: "游霄-开荒之旅-w", remark: "游霄A", checked: true },
@@ -9,8 +9,8 @@ let accounts = [
   { id: "82540931", name: "暴走大作战", remark: "暴走大作战", checked: false }
 ];
 
-const DEFAULT_CREATIVE_GROUP_COUNT = 16;
-const DEFAULT_ASSETS_PER_GROUP = 15;
+const DEFAULT_CREATIVE_GROUP_COUNT = 1;
+const DEFAULT_ASSETS_PER_GROUP = 3;
 const SUPPORTED_ASSET_EXTENSIONS = [".mp4", ".mov", ".m4v", ".avi", ".mkv", ".webm", ".jpg", ".jpeg", ".png", ".webp"];
 
 let assets = [];
@@ -56,6 +56,15 @@ function checkedGoalValue() {
 
 function truncateName(value, maxLength = 100) {
   return String(value || "").slice(0, maxLength);
+}
+
+function concatMap(list, mapper) {
+  return (Array.isArray(list) ? list : []).reduce((items, item, index) => {
+    const next = mapper(item, index);
+    if (Array.isArray(next)) return items.concat(next);
+    if (next !== undefined && next !== null) items.push(next);
+    return items;
+  }, []);
 }
 
 function currentDateToken() {
@@ -148,7 +157,7 @@ function setAssetsPerGroup(value, options = {}) {
   syncAssetsPerGroupInput();
   renderAssets();
   updatePreview(false);
-  if (options.showMessage) showToast(`每组素材数已调整为 ${assetsPerGroup} 个`);
+  if (options.showMessage) showToast(`每条广告创意素材数已调整为 ${assetsPerGroup} 个`);
 }
 
 function setCreativeGroupCount(value, options = {}) {
@@ -166,7 +175,7 @@ function setCreativeGroupCount(value, options = {}) {
   syncCreativeGroupCountInput();
   renderAssets();
   updatePreview(false);
-  if (options.showMessage) showToast(`创意组数量已调整为 ${creativeGroupCount} 个`);
+  if (options.showMessage) showToast(`广告创意数量已调整为 ${creativeGroupCount} 个`);
 }
 
 function init() {
@@ -315,8 +324,13 @@ function renderAuthStatus(status, error) {
     entry.classList.add("error");
     return;
   }
-  if (status.hasAccessToken && status.hasRefreshToken) {
-    text.textContent = "已授权";
+  if (status.state === "expired" || status.state === "invalid" || (status.valid === false && status.hasAccessToken)) {
+    text.textContent = status.message || "授权失效";
+    entry.classList.add("error");
+    return;
+  }
+  if (status.valid) {
+    text.textContent = status.message || "已授权";
     entry.classList.add("ok");
     return;
   }
@@ -369,7 +383,7 @@ async function refreshAuthToken() {
     showToast("授权刷新成功");
   } catch (error) {
     showToast(`授权刷新失败：${error.message}`);
-    renderAuthStatus(null, error);
+    await loadAuthStatus();
   } finally {
     button.disabled = false;
     button.textContent = original;
@@ -714,9 +728,10 @@ function uniqueAssets(items) {
 }
 
 function getUploadTargetAssets() {
+  const selectedAccounts = getSelectedAccounts();
   return uniqueAssets(getEffectiveAssets())
     .map((asset) => assets.find((item) => item.id === asset.id) || asset)
-    .filter((asset) => !asset.photo_id && !asset.photoId);
+    .filter((asset) => selectedAccounts.some((account) => !getAssetPhotoIdForAccount(asset, account)));
 }
 
 function isVideoAsset(asset) {
@@ -724,6 +739,10 @@ function isVideoAsset(asset) {
 }
 
 function assetUploadLabel(asset) {
+  const selectedAccounts = getSelectedAccounts();
+  const uploadedCount = selectedAccounts.filter((account) => getAssetPhotoIdForAccount(asset, account)).length;
+  if (selectedAccounts.length && uploadedCount === selectedAccounts.length) return "已上传";
+  if (uploadedCount > 0) return `已上传${uploadedCount}/${selectedAccounts.length}`;
   if (asset.photo_id || asset.photoId) return "已上传";
   if (asset.upload_status === "uploading") return "上传中";
   if (asset.upload_status === "error") return "上传失败";
@@ -731,6 +750,8 @@ function assetUploadLabel(asset) {
 }
 
 function assetUploadClass(asset) {
+  const selectedAccounts = getSelectedAccounts();
+  if (selectedAccounts.length && selectedAccounts.every((account) => getAssetPhotoIdForAccount(asset, account))) return "uploaded";
   if (asset.photo_id || asset.photoId) return "uploaded";
   if (asset.upload_status === "uploading") return "uploading";
   if (asset.upload_status === "error") return "error";
@@ -758,10 +779,28 @@ function findPhotoId(value) {
   return "";
 }
 
+function getAssetPhotoIdForAccount(asset, account) {
+  if (!asset) return "";
+  const accountId = account && account.id !== undefined ? String(account.id) : "";
+  if (accountId && asset.photo_ids_by_account && asset.photo_ids_by_account[accountId]) {
+    return String(asset.photo_ids_by_account[accountId]);
+  }
+  return String(asset.photo_id || asset.photoId || "");
+}
+
+function setAssetPhotoIdForAccount(asset, account, photoId) {
+  if (!asset || !account || !account.id || !photoId) return;
+  const accountId = String(account.id);
+  asset.photo_ids_by_account = asset.photo_ids_by_account || {};
+  asset.photo_ids_by_account[accountId] = String(photoId);
+  asset.photo_id = String(photoId);
+  asset.photoId = String(photoId);
+}
+
 async function uploadSelectedMaterials() {
-  const account = pickRealCreateAccount();
-  if (!account || !account.id) {
-    showToast("请先选择一个媒体账号");
+  const selectedAccounts = getSelectedAccounts();
+  if (!selectedAccounts.length) {
+    showToast("请先选择媒体账号");
     return;
   }
   const button = $("#uploadMaterialsBtn");
@@ -779,16 +818,22 @@ async function uploadSelectedMaterials() {
     return;
   }
   button.disabled = true;
-  setUploadNotice(`准备上传 ${targets.length} 个素材到快手...`, "uploading");
+  const uploadJobs = [];
+  selectedAccounts.forEach((account) => {
+    targets.forEach((asset) => {
+      if (!getAssetPhotoIdForAccount(asset, account)) uploadJobs.push({ account, asset });
+    });
+  });
+  setUploadNotice(`准备上传 ${targets.length} 个素材到 ${selectedAccounts.length} 个账户...`, "uploading");
   try {
-    for (let index = 0; index < targets.length; index += 1) {
-      const asset = targets[index];
+    for (let index = 0; index < uploadJobs.length; index += 1) {
+      const { account, asset } = uploadJobs[index];
       const file = materialFileStore.get(asset.id);
       if (!file) throw new Error(`找不到本地文件：${asset.fileName}`);
-      button.textContent = `上传中 ${index + 1}/${targets.length}`;
+      button.textContent = `上传中 ${index + 1}/${uploadJobs.length}`;
       asset.upload_status = "uploading";
       asset.upload_error = "";
-      setUploadNotice(`正在上传 ${index + 1}/${targets.length}：${asset.fileName}`, "uploading");
+      setUploadNotice(`正在上传 ${index + 1}/${uploadJobs.length}：${account.name || account.id} · ${asset.fileName}`, "uploading");
       renderAssets();
       const form = new FormData();
       form.append("advertiser_id", account.id);
@@ -802,16 +847,15 @@ async function uploadSelectedMaterials() {
       });
       const photoId = findPhotoId(body);
       if (!photoId) throw new Error("上传接口未返回 photo_id，请检查快手返回结构");
-      asset.photo_id = String(photoId);
-      asset.photoId = String(photoId);
+      setAssetPhotoIdForAccount(asset, account, photoId);
       asset.upload_status = "uploaded";
       asset.upload_response = body.data && body.data.result;
-      setUploadNotice(`已上传 ${index + 1}/${targets.length}：${asset.fileName}`, "success");
+      setUploadNotice(`已上传 ${index + 1}/${uploadJobs.length}：${account.name || account.id} · ${asset.fileName}`, "success");
       renderAssets();
       updatePreview(false);
     }
-    showToast(`已上传 ${targets.length} 个素材到快手`);
-    setUploadNotice(`上传完成：${targets.length} 个素材已拿到 photo_id`, "success");
+    showToast(`已完成 ${uploadJobs.length} 次素材上传`);
+    setUploadNotice(`上传完成：${targets.length} 个素材已按账户拿到 photo_id`, "success");
   } catch (error) {
     const uploadingAsset = targets.find((asset) => asset.upload_status === "uploading");
     if (uploadingAsset) {
@@ -831,15 +875,16 @@ async function uploadSelectedMaterials() {
 function updateMaterialStats() {
   const effective = getEffectiveAssets();
   const uniqueEffective = uniqueAssets(effective);
+  const creativeRows = buildRows();
   const uploaded = uniqueEffective.filter((asset) => asset.photo_id || asset.photoId).length;
   const uploading = uniqueEffective.filter((asset) => asset.upload_status === "uploading").length;
   const failed = uniqueEffective.filter((asset) => asset.upload_status === "error").length;
   const assetCount = $("#assetCount");
   if (assetCount) assetCount.textContent = `已选：${assets.length}个`;
   const totalAds = $("#totalAds");
-  if (totalAds) totalAds.textContent = effective.length;
+  if (totalAds) totalAds.textContent = creativeRows.length;
   const taskCount = $("#taskCount");
-  if (taskCount) taskCount.textContent = effective.length;
+  if (taskCount) taskCount.textContent = creativeRows.length;
   const folderName = $("#folderName");
   if (folderName) folderName.textContent = materialFolderName || "未选择文件夹";
   const folderStats = $("#folderStats");
@@ -848,7 +893,7 @@ function updateMaterialStats() {
   }
   const materialToolbarStats = $("#materialToolbarStats");
   if (materialToolbarStats) {
-    materialToolbarStats.textContent = `${creativeGroupCount} 个创意组 · 本地素材 ${assets.length} 个 · 每组最多 ${assetsPerGroup} 个`;
+    materialToolbarStats.textContent = `${creativeGroupCount} 条广告创意 · 本地素材 ${assets.length} 个 · 每条最多 ${assetsPerGroup} 个素材`;
   }
   syncCreativeGroupCountInput();
   syncAssetsPerGroupInput();
@@ -905,7 +950,7 @@ function renderCreativeGroups() {
     const items = assignedAssets.length
       ? assignedAssets.map((asset, itemIndex) => `
           <div class="creative-item">
-            <b>创意${itemIndex + 1}</b>
+            <b>素材${itemIndex + 1}</b>
             <span title="${escapeHtml(asset.relativePath)}">${escapeHtml(asset.name)}</span>
             <small>${escapeHtml(asset.extension)} · ${escapeHtml(asset.size)}</small>
             <em class="asset-status ${assetUploadClass(asset)}">${assetUploadLabel(asset)}</em>
@@ -926,7 +971,7 @@ function renderCreativeGroups() {
     return `
       <article class="creative-group-card">
         <div class="creative-group-head">
-          <strong>创意组${String(index + 1).padStart(2, "0")}</strong>
+          <strong>广告创意${String(index + 1).padStart(2, "0")}</strong>
           <span>素材(${assignedAssets.length}/${assetsPerGroup})</span>
         </div>
         ${picker}
@@ -942,7 +987,7 @@ function renderCreativeGroups() {
       if (checkbox.checked) {
         if (current.length >= assetsPerGroup) {
           checkbox.checked = false;
-          showToast(`每个创意组最多 ${assetsPerGroup} 个素材`);
+          showToast(`每条广告创意最多 ${assetsPerGroup} 个素材`);
           return;
         }
         creativeGroupAssignments[groupIndex] = current.concat(checkbox.value);
@@ -1066,9 +1111,20 @@ async function apiFetch(path, options = {}) {
     headers
   });
   const body = await response.json().catch(() => ({}));
-  if (!response.ok) {
+  if (!response.ok || body.ok === false) {
     const detailMessage = body.detail && (body.detail.message || body.detail.msg || body.detail.raw);
-    throw new Error([body.error || `HTTP ${response.status}`, detailMessage].filter(Boolean).join("："));
+    const resultErrors = body.data && Array.isArray(body.data.top_errors)
+      ? body.data.top_errors.map((item) => item.message).filter(Boolean).join("；")
+      : "";
+    const detailErrors = body.detail && Array.isArray(body.detail.errors)
+      ? body.detail.errors
+        .map((item) => item && item.response && (item.response.message || item.response.msg || item.response.raw))
+        .filter(Boolean)
+        .join("；")
+      : "";
+    const error = new Error([body.error || `HTTP ${response.status}`, detailMessage, resultErrors, detailErrors].filter(Boolean).join("："));
+    error.body = body;
+    throw error;
   }
   return body;
 }
@@ -1126,37 +1182,89 @@ function renderCreateResult(result, error) {
     return;
   }
 
+  if (Array.isArray(result)) {
+    box.className = "create-result success";
+    box.innerHTML = result.map((item) => {
+      const data = item.data || {};
+      const detail = item.result || {};
+      const campaignPayload = detail.campaign && detail.campaign.payload ? detail.campaign.payload : {};
+      const unitPayload = detail.unit && detail.unit.payload ? detail.unit.payload : {};
+      const createdCreatives = Array.isArray(detail.creatives) && detail.creatives.length
+        ? detail.creatives
+        : (detail.creative ? [detail.creative] : []);
+      const creativeIds = createdCreatives.map((creative) => creative.new_creative_id).filter(Boolean);
+      const unitIds = Array.isArray(data.new_unit_ids) && data.new_unit_ids.length
+        ? data.new_unit_ids
+        : [data.new_unit_id].filter(Boolean);
+      const materialCount = data.material_count || createdCreatives.length;
+      const materialsPerCreative = Array.isArray(data.materials_per_creative) ? data.materials_per_creative.join(", ") : "";
+      const photoIds = createdCreatives.map((creative) => creative.photo_id).filter(Boolean);
+      const miniAppData = unitPayload.custom_mini_app_data || {};
+      return `
+        <div class="create-result-block">
+          <strong>真实创建成功（已暂停） - ${escapeHtml(item.account && (item.account.name || item.account.id) || data.advertiser_id || "")}</strong>
+          <span>账户：${escapeHtml(data.advertiser_id || "")}</span>
+          <span>计划：${escapeHtml(data.new_campaign_id || "")}</span>
+          <span>广告组：${escapeHtml(unitIds.join(", ") || "")}</span>
+          <span>页面广告创意数量：${escapeHtml(data.ad_group_creatives_created || data.creative_groups_created || "")}</span>
+          <span>每条广告创意素材数：${escapeHtml(materialsPerCreative || "")}</span>
+          <span>快手 OpenAPI 真实创意数：${escapeHtml(data.openapi_creatives_created || data.creatives_created || creativeIds.length || "")}</span>
+          <span>创意 ID：${escapeHtml(creativeIds.join(", "))}</span>
+          <span>素材数：${escapeHtml(materialCount || "")}</span>
+          <span>状态：put_status=${escapeHtml(data.put_status || "")}</span>
+          <span>计划名：${escapeHtml(campaignPayload.campaign_name || "")}</span>
+          <span>广告组名：${escapeHtml(unitPayload.unit_name || "")}</span>
+          ${photoIds.length ? `<span>素材 photo_id：${escapeHtml(photoIds.join(", "))}</span>` : ""}
+          <span>ROI：${escapeHtml(unitPayload.roi_ratio || "")}</span>
+          <span>推广目标：${escapeHtml(miniAppData.mini_app_id_platform || "")}</span>
+        </div>
+      `;
+    }).join("");
+    return;
+  }
+
   const data = result.data || {};
   const detail = result.result || {};
   const resultFile = detail.result_file || "";
   const campaignPayload = detail.campaign && detail.campaign.payload ? detail.campaign.payload : {};
   const unitPayload = detail.unit && detail.unit.payload ? detail.unit.payload : {};
-  const advancedCreative = detail.advanced_program_creative || null;
-  const createdCreatives = advancedCreative
-    ? [advancedCreative]
-    : (Array.isArray(detail.creatives) && detail.creatives.length ? detail.creatives : (detail.creative ? [detail.creative] : []));
+  const createdCreatives = Array.isArray(detail.creatives) && detail.creatives.length
+    ? detail.creatives
+    : (detail.creative ? [detail.creative] : []);
   const creativePayload = createdCreatives[0] && createdCreatives[0].payload ? createdCreatives[0].payload : {};
-  const creativeIds = advancedCreative
-    ? (advancedCreative.new_creative_ids || [])
-    : createdCreatives.map((item) => item.new_creative_id).filter(Boolean);
-  const creativeMode = data.creative_mode || (advancedCreative ? "advanced_program" : "standard");
-  const materialCount = data.material_count || (advancedCreative ? advancedCreative.material_count : createdCreatives.length);
-  const photoIds = advancedCreative ? (advancedCreative.photo_ids || []) : createdCreatives.map((item) => item.photo_id).filter(Boolean);
+  const creativeIds = createdCreatives
+    .map((item) => item.new_creative_id)
+    .concat(concatMap(createdCreatives, (item) => item.new_creative_ids || []))
+    .filter(Boolean);
+  const unitIds = Array.isArray(data.new_unit_ids) && data.new_unit_ids.length
+    ? data.new_unit_ids
+    : [data.new_unit_id].filter(Boolean);
+  const creativeMode = data.creative_mode || "standard_grouped";
+  const businessCreativeCount = data.ad_group_creatives_created || data.creative_groups_created || unitIds.length || 1;
+  const openapiCreativeCount = data.openapi_creatives_created || data.creatives_created || creativeIds.length;
+  const materialCount = data.material_count || createdCreatives.length;
+  const materialsPerCreative = Array.isArray(data.materials_per_creative) ? data.materials_per_creative.join(", ") : "";
+  const photoIds = createdCreatives.map((item) => item.photo_id).filter(Boolean);
   const miniAppData = unitPayload.custom_mini_app_data || {};
+  const modeText = creativeMode === "standard_grouped"
+    ? "普通创意（按广告组聚合展示）"
+    : (creativeMode === "advanced_program" ? "程序化创意包" : "普通创意");
   box.className = "create-result success";
   box.innerHTML = `
     <strong>真实创建成功（已暂停）</strong>
     <span>账户：${escapeHtml(data.advertiser_id || "")}</span>
     <span>计划：${escapeHtml(data.new_campaign_id || "")}</span>
-    <span>广告组：${escapeHtml(data.new_unit_id || "")}</span>
-    <span>创建模式：${creativeMode === "advanced_program" ? "程序化创意包" : "普通创意"}</span>
-    <span>${creativeMode === "advanced_program" ? "程序化创意包" : "创意"}：${escapeHtml(creativeIds.join(", ") || data.new_creative_id || data.package_name || "")}</span>
-    <span>${creativeMode === "advanced_program" ? "程序化创意包数" : "创意数"}：${escapeHtml(data.creatives_created || creativeIds.length || "")}</span>
+    <span>广告组：${escapeHtml(unitIds.join(", ") || "")}</span>
+    <span>创建模式：${escapeHtml(modeText)}</span>
+    <span>页面广告创意数量：${escapeHtml(businessCreativeCount || "")}</span>
+    <span>每条广告创意素材数：${escapeHtml(materialsPerCreative || "")}</span>
+    <span>快手 OpenAPI 真实创意数：${escapeHtml(openapiCreativeCount || "")}</span>
+    <span>创意 ID：${escapeHtml(creativeIds.join(", ") || data.new_creative_id || "")}</span>
     <span>素材数：${escapeHtml(materialCount || "")}</span>
     <span>状态：put_status=${escapeHtml(data.put_status || "")}</span>
     <span>计划名：${escapeHtml(campaignPayload.campaign_name || "")}</span>
     <span>广告组名：${escapeHtml(unitPayload.unit_name || "")}</span>
-    <span>创意名：${escapeHtml(creativePayload.creative_name || creativePayload.package_name || data.package_name || "")}${createdCreatives.length > 1 && creativeMode !== "advanced_program" ? " 等" : ""}</span>
+    <span>创意名：${escapeHtml(creativePayload.creative_name || data.creative_name || "")}${createdCreatives.length > 1 ? " 等" : ""}</span>
     ${photoIds.length ? `<span>素材 photo_id：${escapeHtml(photoIds.join(", "))}</span>` : ""}
     <span>ROI：${escapeHtml(unitPayload.roi_ratio || "")}</span>
     <span>推广目标：${escapeHtml(miniAppData.mini_app_id_platform || "")}</span>
@@ -1187,6 +1295,84 @@ function pickRealCreateAccount() {
   return accounts.find((account) => String(account.id) === "39059876") || selected[0] || accounts[0];
 }
 
+function buildCreativeCreateGroups(account) {
+  const groups = [];
+  creativeGroupAssignments.forEach((ids, groupIndex) => {
+    const localAssets = getAssignedAssetsForGroup(groupIndex).map((asset) => Object.assign({ groupIndex }, asset));
+    if (!localAssets.length) return;
+    const sourceAssets = localAssets.map((asset) => assets.find((item) => item.id === asset.id) || asset);
+    const primaryAsset = localAssets[0] || {};
+    const names = buildConfiguredNames(account, primaryAsset, groupIndex + 1);
+    groups.push({
+      index: groupIndex + 1,
+      localAssets,
+      sourceAssets,
+      names,
+      uploadedAssetInputs: sourceAssets
+        .map((asset, assetIndex) => ({
+          asset,
+          localAsset: localAssets[assetIndex] || asset,
+          photoId: getAssetPhotoIdForAccount(asset, account)
+        }))
+        .filter((item) => item.photoId)
+    });
+  });
+  return groups;
+}
+
+function buildCreateRequestPayload(account, creativeGroups) {
+  const firstGroup = creativeGroups[0];
+  const configuredNames = firstGroup.names;
+  const copies = getCopies();
+  const firstCopy = copies[0] || "";
+  return {
+    advertiser_id: Number(account.id),
+    source_advertiser_id: 39059876,
+    source_campaign_id: 9295250964,
+    campaign_name: configuredNames.campaignName,
+    unit_name: configuredNames.unitName,
+    creative_name: configuredNames.creativeName,
+    group_rule: $("#groupRule").value,
+    creative_rule: $("#creativeRule").value,
+    roi_ratio: $("#roi").value,
+    promotion_target_type: promotionTargetConfig.type,
+    mini_app_id_platform: promotionTargetConfig.appId,
+    mini_app_type: promotionMiniAppType(promotionTargetConfig.type),
+    start_date: $("#startDate").value || new Date().toISOString().slice(0, 10),
+    photo_id: firstGroup.uploadedAssetInputs[0] ? firstGroup.uploadedAssetInputs[0].photoId : undefined,
+    photo_ids: firstGroup.uploadedAssetInputs.map((item) => item.photoId),
+    creative_assets: firstGroup.uploadedAssetInputs.map((item, itemIndex) => ({
+      photo_id: item.photoId,
+      creative_name: buildConfiguredNames(account, item.localAsset, itemIndex + 1).creativeName,
+      asset_name: item.localAsset.name || item.asset.name || "",
+      width: item.localAsset.width || item.asset.width,
+      height: item.localAsset.height || item.asset.height,
+      creative_material_type: item.localAsset.creative_material_type || item.asset.creative_material_type
+    })),
+    creative_groups: creativeGroups.map((group) => ({
+      index: group.index,
+      unit_name: group.names.unitName,
+      creative_name: group.names.creativeName,
+      photo_ids: group.uploadedAssetInputs.map((item) => item.photoId),
+      creative_assets: group.uploadedAssetInputs.map((item, itemIndex) => ({
+        photo_id: item.photoId,
+        creative_name: buildConfiguredNames(account, item.localAsset, itemIndex + 1).creativeName,
+        asset_name: item.localAsset.name || item.asset.name || "",
+        width: item.localAsset.width || item.asset.width,
+        height: item.localAsset.height || item.asset.height,
+        creative_material_type: item.localAsset.creative_material_type || item.asset.creative_material_type
+      }))
+    })),
+    advanced_program: false,
+    action_bar: $("#cta").value,
+    description: firstCopy || $("#reason").value,
+    put_status: 2,
+    max_units: 1,
+    max_creative_attempts: 60,
+    save_files: true
+  };
+}
+
 async function previewWithBackend() {
   try {
     const body = await apiFetch("/api/preview", {
@@ -1205,35 +1391,36 @@ async function previewWithBackend() {
 }
 
 async function realCreateTestFromPage() {
-  const account = pickRealCreateAccount();
-  if (!account || !account.id) {
-    showToast("请先选择一个媒体账号");
-    renderCreateResult(null, new Error("请先选择一个媒体账号"));
+  const selectedAccounts = getSelectedAccounts();
+  if (!selectedAccounts.length) {
+    showToast("请先选择媒体账号");
+    renderCreateResult(null, new Error("请先选择媒体账号"));
     return;
   }
-  const assignedLocalAssets = getEffectiveAssets();
-  const firstGroupIndex = assignedLocalAssets.length ? assignedLocalAssets[0].groupIndex : 0;
-  const currentGroupAssets = assignedLocalAssets.filter((asset) => asset.groupIndex === firstGroupIndex);
-  const assignedSourceAssets = currentGroupAssets.map((asset) => assets.find((item) => item.id === asset.id) || asset);
-  const missingPhotoIds = assignedSourceAssets.filter((asset) => !asset.photo_id && !asset.photoId);
-  if (currentGroupAssets.length && missingPhotoIds.length) {
-    const message = "你选的是本地文件夹素材，但还没有上传到快手素材库拿到 photo_id；为避免创建成源计划素材，本次已拦截。";
-    showToast("本地素材还未上传到快手，不能真实创建");
+  const accountPlans = selectedAccounts.map((account) => ({
+    account,
+    creativeGroups: buildCreativeCreateGroups(account)
+  }));
+  if (!accountPlans.some((plan) => plan.creativeGroups.length)) {
+    showToast("请先给广告创意选择素材");
+    renderCreateResult(null, new Error("请先给广告创意选择素材"));
+    return;
+  }
+  const missingPhotoIds = concatMap(accountPlans, (plan) =>
+    concatMap(plan.creativeGroups, (group) =>
+      group.sourceAssets.filter((asset) => !getAssetPhotoIdForAccount(asset, plan.account))
+        .map((asset) => `${plan.account.name || plan.account.id}：${asset.name || asset.fileName}`)
+    )
+  );
+  if (missingPhotoIds.length) {
+    const message = `还有素材没有上传到对应账户，不能真实创建：${missingPhotoIds.slice(0, 5).join("；")}${missingPhotoIds.length > 5 ? "..." : ""}`;
+    showToast("素材还未上传到所有选中账户，不能真实创建");
     renderCreateResult(null, new Error(message));
     return;
   }
-  const uploadedAssetInputs = assignedSourceAssets
-    .map((asset, index) => ({
-      asset,
-      localAsset: currentGroupAssets[index] || asset,
-      photoId: asset.photo_id || asset.photoId
-    }))
-    .filter((item) => item.photoId);
-  const uploadedAsset = uploadedAssetInputs[0] && uploadedAssetInputs[0].asset;
-  const firstAssignedAsset = currentGroupAssets[0] || {};
-  const configuredNames = buildConfiguredNames(account, firstAssignedAsset, 1);
-  const copies = getCopies();
-  const firstCopy = copies[0] || "";
+  const allUploadedAssetInputs = concatMap(accountPlans, (plan) =>
+    concatMap(plan.creativeGroups, (group) => group.uploadedAssetInputs)
+  );
   if (!promotionTargetConfig.appId) {
     const message = "请先在广告组基本信息里填写推广目标 APPID";
     showToast(message);
@@ -1244,51 +1431,31 @@ async function realCreateTestFromPage() {
   const button = $("#realCreateBtn");
   const originalText = button.textContent;
   button.disabled = true;
-  button.textContent = uploadedAssetInputs.length ? "上传素材创建中..." : "源计划测试中...";
+  button.textContent = allUploadedAssetInputs.length ? "上传素材创建中..." : "源计划测试中...";
   renderCreateResult(null, null);
   $("#previewEmpty").style.display = "none";
   $("#previewResult").classList.add("show");
 
   try {
-    const body = await apiFetch("/api/kuaishou/campaign/test-create-flow", {
-      method: "POST",
-      body: JSON.stringify({
-        advertiser_id: Number(account.id),
-        source_campaign_id: 9295250964,
-        campaign_name: configuredNames.campaignName,
-        unit_name: configuredNames.unitName,
-        creative_name: configuredNames.creativeName,
-        group_rule: $("#groupRule").value,
-        creative_rule: $("#creativeRule").value,
-        roi_ratio: $("#roi").value,
-        promotion_target_type: promotionTargetConfig.type,
-        mini_app_id_platform: promotionTargetConfig.appId,
-        mini_app_type: promotionMiniAppType(promotionTargetConfig.type),
-        start_date: $("#startDate").value || new Date().toISOString().slice(0, 10),
-        photo_id: uploadedAssetInputs[0] ? uploadedAssetInputs[0].photoId : undefined,
-        photo_ids: uploadedAssetInputs.map((item) => item.photoId),
-        creative_assets: uploadedAssetInputs.map((item, index) => ({
-          photo_id: item.photoId,
-          creative_name: buildConfiguredNames(account, item.localAsset, index + 1).creativeName,
-          asset_name: item.localAsset.name || item.asset.name || "",
-          width: item.localAsset.width || item.asset.width,
-          height: item.localAsset.height || item.asset.height,
-          creative_material_type: item.localAsset.creative_material_type || item.asset.creative_material_type
-        })),
-        advanced_program: uploadedAssetInputs.length > 1,
-        action_bar: $("#cta").value,
-        description: firstCopy || $("#reason").value,
-        put_status: 2,
-        max_units: 1,
-        max_creative_attempts: 60,
-        save_files: true
-      })
-    });
-    renderCreateResult(body, null);
-    showToast(`${uploadedAsset ? "上传素材创建" : "源计划测试"}成功：计划 ${body.data.new_campaign_id}`);
+    const results = [];
+    for (let index = 0; index < accountPlans.length; index += 1) {
+      const plan = accountPlans[index];
+      button.textContent = `创建中 ${index + 1}/${accountPlans.length}`;
+      const body = await apiFetch("/api/kuaishou/campaign/test-create-flow", {
+        method: "POST",
+        body: JSON.stringify(buildCreateRequestPayload(plan.account, plan.creativeGroups))
+      });
+      results.push(Object.assign({ account: plan.account }, body));
+      renderCreateResult(results, null);
+    }
+    renderCreateResult(results, null);
+    showToast(`真实创建成功：${results.length}/${accountPlans.length} 个账户`);
   } catch (error) {
     renderCreateResult(null, error);
     showToast(`创建失败：${error.message}`);
+    if (/token|授权/i.test(error.message)) {
+      await loadAuthStatus();
+    }
   } finally {
     button.disabled = false;
     button.textContent = originalText;
@@ -1301,7 +1468,7 @@ function openEditor(page) {
     basic: ["广告组基本信息", "选择广告类型、投放位置、预算排期、优化目标和命名规则"],
     targeting: ["定向包", "选择定向包、人群包、区域、年龄、性别、平台和网络环境"],
     creativeInfo: ["创意基本信息", "配置原生广告、授权快手号、行动号召、推荐理由和创意分类"],
-    material: ["创意素材", "选择素材选取方式、多账户分配规则，并维护自定义数量的创意组"],
+    material: ["创意素材", "选择素材选取方式、多账户分配规则，并维护自定义数量的广告创意"],
     copy: ["文案", "筛选文案库、配置分配规则，并管理已选文案"]
   };
   currentEditorPage = normalized;
@@ -1421,7 +1588,7 @@ function exportCsv(inputRows) {
     return;
   }
 
-  const headers = ["序号", "账户", "营销目标", "广告组名称", "创意名称", "创意组", "素材", "素材文件", "素材路径", "文案", "行动号召", "推荐理由", "预算", "ROI系数"];
+  const headers = ["序号", "账户", "营销目标", "广告组名称", "创意名称", "广告创意序号", "素材", "素材文件", "素材路径", "文案", "行动号召", "推荐理由", "预算", "ROI系数"];
   const body = rows.map((row) => [
     row.index,
     row.account,

@@ -1,0 +1,4751 @@
+{
+  "version": "20260626-grouped-standard-creative",
+  "error": "No standard creative could be created for every requested material",
+  "body": {
+    "ok": false,
+    "source_campaign_id": 9295250964,
+    "advertiser_id": 39059876,
+    "started_at": "2026-06-26T09:28:31.685Z",
+    "campaign": {
+      "new_campaign_id": 9964744843,
+      "payload": {
+        "advertiser_id": 39059876,
+        "campaign_name": "开荒之旅_202606260013",
+        "type": 19,
+        "day_budget": 0,
+        "ad_type": 0,
+        "bid_type": 0,
+        "auto_adjust": 1,
+        "auto_build": 1,
+        "auto_build_name_rule": {
+          "creative_name_rule": "<账户备注><素材名>_[日期][序号]",
+          "unit_name_rule": "开荒之旅_[日期][序号]3"
+        },
+        "cap_roi_ratio": 0,
+        "cap_bid": 0,
+        "constrait_cpa": 0,
+        "auto_manage": 1
+      },
+      "response": {
+        "code": 0,
+        "data": {
+          "campaign_id": 9964744843
+        },
+        "message": "OK",
+        "request_id": "ENSAgIDgw5OYChjRAiCGyYma8DMoyf_aiwU="
+      }
+    },
+    "unit": {
+      "group_index": 1,
+      "source_unit_id": 27969965564,
+      "new_unit_id": 29971296663,
+      "payload": {
+        "put_status": 2,
+        "bid_type": 10,
+        "ocpx_action_type": 1011,
+        "roi_ratio": 0.72,
+        "scene_id": [
+          6,
+          7,
+          24
+        ],
+        "unit_type": 4,
+        "begin_time": "2026-06-26",
+        "schedule_time": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "day_budget": 0,
+        "schema_uri": "kwai://sogame/launch?appId=ks690739594015559335&from=dsp_kuaishou_default_w&extension=%7B%22callback%22%3A%22__CALLBACK_PARAM__%22%2C%22account_id%22%3A%22__ACCOUNTID__%22%2C%22campaign_id%22%3A%22__DID__%22%2C%22unit_id%22%3A%22__AID__%22%2C%22creative_id%22%3A%22__CID__%22%7D",
+        "show_mode": 2,
+        "smart_cover": false,
+        "asset_mining": false,
+        "extend_search": false,
+        "custom_mini_app_data": {
+          "mini_app_type": 2,
+          "mini_app_id_platform": "ks690739594015559335",
+          "bootstrap_page": "",
+          "bootstrap_params": ""
+        },
+        "target": {
+          "gender": 0,
+          "network": 0,
+          "media_source_type": 0,
+          "user_type": 0,
+          "shared_user": 0,
+          "behavior_type": 0,
+          "disable_installed_app_switch": 0,
+          "ip_type": 0,
+          "filter_converted_level": 0,
+          "platform_os": 0,
+          "filter_time_range": 0,
+          "auto_population": 0,
+          "intelli_extend_option": 0
+        },
+        "outer_loop_native": 1,
+        "quick_search": 0,
+        "target_explore": 0,
+        "unit_material_type": 2,
+        "advertiser_id": 39059876,
+        "campaign_id": 9964744843,
+        "unit_name": "开荒之旅_202606260013"
+      },
+      "response": {
+        "code": 0,
+        "data": {
+          "unit_id": 29971296663
+        },
+        "message": "OK",
+        "request_id": "ELSAgICg8rmpChiZBiDWzIma8DMohJf2jQU="
+      }
+    },
+    "units": [
+      {
+        "group_index": 1,
+        "source_unit_id": 27969965564,
+        "new_unit_id": 29971296663,
+        "payload": {
+          "put_status": 2,
+          "bid_type": 10,
+          "ocpx_action_type": 1011,
+          "roi_ratio": 0.72,
+          "scene_id": [
+            6,
+            7,
+            24
+          ],
+          "unit_type": 4,
+          "begin_time": "2026-06-26",
+          "schedule_time": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "day_budget": 0,
+          "schema_uri": "kwai://sogame/launch?appId=ks690739594015559335&from=dsp_kuaishou_default_w&extension=%7B%22callback%22%3A%22__CALLBACK_PARAM__%22%2C%22account_id%22%3A%22__ACCOUNTID__%22%2C%22campaign_id%22%3A%22__DID__%22%2C%22unit_id%22%3A%22__AID__%22%2C%22creative_id%22%3A%22__CID__%22%7D",
+          "show_mode": 2,
+          "smart_cover": false,
+          "asset_mining": false,
+          "extend_search": false,
+          "custom_mini_app_data": {
+            "mini_app_type": 2,
+            "mini_app_id_platform": "ks690739594015559335",
+            "bootstrap_page": "",
+            "bootstrap_params": ""
+          },
+          "target": {
+            "gender": 0,
+            "network": 0,
+            "media_source_type": 0,
+            "user_type": 0,
+            "shared_user": 0,
+            "behavior_type": 0,
+            "disable_installed_app_switch": 0,
+            "ip_type": 0,
+            "filter_converted_level": 0,
+            "platform_os": 0,
+            "filter_time_range": 0,
+            "auto_population": 0,
+            "intelli_extend_option": 0
+          },
+          "outer_loop_native": 1,
+          "quick_search": 0,
+          "target_explore": 0,
+          "unit_material_type": 2,
+          "advertiser_id": 39059876,
+          "campaign_id": 9964744843,
+          "unit_name": "开荒之旅_202606260013"
+        },
+        "response": {
+          "code": 0,
+          "data": {
+            "unit_id": 29971296663
+          },
+          "message": "OK",
+          "request_id": "ELSAgICg8rmpChiZBiDWzIma8DMohJf2jQU="
+        }
+      }
+    ],
+    "creative": {
+      "group_index": 1,
+      "target_index": 1,
+      "source_creative_id": 256931099823,
+      "source_unit_id": 27969965564,
+      "new_unit_id": 29971296663,
+      "new_creative_id": 270202081684,
+      "photo_id": "5215168568322598075",
+      "asset_name": "0430片头+第二关 (12)",
+      "payload": {
+        "photo_id": "5215168568322598075",
+        "creative_material_type": 1,
+        "new_expose_tag": [
+          {
+            "text": "爆款游戏",
+            "url": ""
+          },
+          {
+            "text": "全网火热",
+            "url": ""
+          }
+        ],
+        "outer_loop_native": 1,
+        "kol_user_type": 1,
+        "kol_user_id": 4219963433,
+        "recommendation": "开始游戏",
+        "advertiser_id": 39059876,
+        "unit_id": 29971296663,
+        "creative_name": "大师爱闯关0430片头+第二关 (12)",
+        "action_bar_text": "去玩游戏",
+        "description": "一步错步步错，挑战你的智商极限！"
+      },
+      "response": {
+        "code": 0,
+        "data": {
+          "creative_id": 270202081684
+        },
+        "message": "OK",
+        "request_id": "ENKAgICAvpOYChiLBCCR1Ima8DMomZW9kgU="
+      },
+      "attempt": 1
+    },
+    "creatives": [
+      {
+        "group_index": 1,
+        "target_index": 1,
+        "source_creative_id": 256931099823,
+        "source_unit_id": 27969965564,
+        "new_unit_id": 29971296663,
+        "new_creative_id": 270202081684,
+        "photo_id": "5215168568322598075",
+        "asset_name": "0430片头+第二关 (12)",
+        "payload": {
+          "photo_id": "5215168568322598075",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 0,
+          "data": {
+            "creative_id": 270202081684
+          },
+          "message": "OK",
+          "request_id": "ENKAgICAvpOYChiLBCCR1Ima8DMomZW9kgU="
+        },
+        "attempt": 1
+      }
+    ],
+    "creative_groups": [
+      {
+        "group_index": 1,
+        "source_unit_id": 27969965564,
+        "new_unit_id": 29971296663,
+        "unit_name": "开荒之旅_202606260013",
+        "creative_name": "大师爱闯关0430片头+第二关 (12)",
+        "requested_material_count": 3,
+        "created_creative_count": 1,
+        "photo_ids": [
+          "5215168568322598075",
+          "5191806143598292430",
+          "5213761193411867780"
+        ],
+        "new_creative_ids": [
+          270202081684
+        ],
+        "creatives": [
+          {
+            "group_index": 1,
+            "target_index": 1,
+            "source_creative_id": 256931099823,
+            "source_unit_id": 27969965564,
+            "new_unit_id": 29971296663,
+            "new_creative_id": 270202081684,
+            "photo_id": "5215168568322598075",
+            "asset_name": "0430片头+第二关 (12)",
+            "payload": {
+              "photo_id": "5215168568322598075",
+              "creative_material_type": 1,
+              "new_expose_tag": [
+                {
+                  "text": "爆款游戏",
+                  "url": ""
+                },
+                {
+                  "text": "全网火热",
+                  "url": ""
+                }
+              ],
+              "outer_loop_native": 1,
+              "kol_user_type": 1,
+              "kol_user_id": 4219963433,
+              "recommendation": "开始游戏",
+              "advertiser_id": 39059876,
+              "unit_id": 29971296663,
+              "creative_name": "大师爱闯关0430片头+第二关 (12)",
+              "action_bar_text": "去玩游戏",
+              "description": "一步错步步错，挑战你的智商极限！"
+            },
+            "response": {
+              "code": 0,
+              "data": {
+                "creative_id": 270202081684
+              },
+              "message": "OK",
+              "request_id": "ENKAgICAvpOYChiLBCCR1Ima8DMomZW9kgU="
+            },
+            "attempt": 1
+          }
+        ]
+      }
+    ],
+    "advanced_program_creative": null,
+    "errors": [
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256931099823,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM6AgIDgnLipChiGBiCb6Ima8DMoptvdngU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256931099723,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM6AgIDgnLipChi8CSCh8oma8DMooMfupAU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399462,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICw4oarChiAByDk-oma8DMom76IqgU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399012,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQw7ipChiyBSD1hoqa8DMomLO8sQU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398179,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgIDgmripChi-BiCkkIqa8DMotJyYtwU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398819,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENWAgICwkZOYChjGBiC9mIqa8DMoo8uYvAU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399086,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQw7ipChixBCCGo4qa8DMo5qvSwgU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398764,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELmAgICwo5OYChidBCC_q4qa8DMow4jmxwU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399850,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELyAgICg2r-oChijByDMs4qa8DMoyfvezAU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398379,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICQ_KGpChjyAyCovoqa8DMokbqk0wU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398327,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICQ_KGpChibBCDKx4qa8DMojKP42AU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399154,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELyAgICg2r-oChjXBSC7z4qa8DMoi5Tg3QU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399538,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgICg8rmpChj3CCDK14qa8DMo05na4gU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398704,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgICAvpOYChjhByCJ34qa8DMojs2j5wU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399231,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELWAgIDw4b-oChioByCB6Iqa8DMogOzd7AU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398653,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICwxpOYChjhAiC98Iqa8DMoqr_z8QU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398276,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELmAgIDA2b-oChisAyDX-4qa8DMoydze-AU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398594,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICA1I2oChjWCCD5g4ua8DMozbjk_QU="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399619,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw1b-oChjrAyCGjIua8DMo3LbdggY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399694,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgICAvpOYChi0BCDJlIua8DMot6P3hwY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398541,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM6AgIDgnLipChjPBiCAnIua8DMo8d67jAY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399766,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICw4oarChimCCDRo4ua8DMotYOQkQY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398229,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw1b-oChinBSCgrYua8DMoha__lgY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399315,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICA1I2oChiNBSCPt4ua8DMov6OCnQY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398879,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgIDwkoerChjnCSDxwIua8DMo-Z_9ogY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398940,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDg8rmpChizBCDLx4ua8DMokuuIpwY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399389,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDg8rmpChiRCCDEzoua8DMoyLqnqwY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398427,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELWAgIDw4b-oChigAiDi1Yua8DMo9d7crwY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398489,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICQm5OYChiHBiD43Yua8DMoj47btAY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903088819,
+        "source_unit_id": 27969965564,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw_YarChjVBiCl5Yua8DMo9MOZuQY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248486,
+        "source_unit_id": 27497328524,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICA5LipChijBSDv64ua8DMoyaabvQY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248689,
+        "source_unit_id": 27497328524,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgIDgmripChisCSDN84ua8DMog9b3wQY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248560,
+        "source_unit_id": 27497328524,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELmAgIDA2b-oChjfByCv-oua8DMoj5mIxgY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248880,
+        "source_unit_id": 27497328524,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICQm5OYChiWCSC_gYya8DMo7uW0ygY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248607,
+        "source_unit_id": 27497328524,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELWAgIDw4b-oChjbBiCSiYya8DMo6KiKzwY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248972,
+        "source_unit_id": 27497328524,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM6AgIDgnLipChieBiC2kIya8DMo16DD0wY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248651,
+        "source_unit_id": 27497328524,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELWAgIDw4b-oChjKByCtmYya8DMopvj82AY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248827,
+        "source_unit_id": 27497328524,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw1b-oChjtBCD5oIya8DMomIvO3QY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653687,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICA1I2oChjIAiDQqIya8DMolpCm4gY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653941,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw1b-oChjIBSDTsIya8DMovoGZ5wY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653619,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgICQ_aGpChiiAiC5uoya8DMo9qGW7QY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653488,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDg8rmpChj1CCCixIya8DMoj8GV8wY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653552,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgIDwkoerChiHBSDjy4ya8DMoiYvg9wY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653824,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENSAgIDgw5OYChi6ByCd04ya8DMo6aWm_AY="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653761,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw_YarChiaByCe3Yya8DMopZm0ggc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653343,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICA5LipChjVBiCo5Iya8DMowZfdhgc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653885,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELmAgIDA2b-oChidBiDI7oya8DMo4vb9jAc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653275,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM6AgIDgnLipChiQBSC79Yya8DMosfKYkQc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653416,
+        "source_unit_id": 27198229900,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICwxpOYChjLBSDb_4ya8DMowNO5lwc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939153,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQxbipChivByCFho2a8DMo-IOomwc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939313,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw1b-oChitCCDejo2a8DMoqLTPoAc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938770,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICA1I2oChjnBiD8lY2a8DMorMyEpQc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938708,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICwxpOYChjnBSDnnY2a8DMogd3oqQc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939480,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELmAgICwo5OYChjeCCC6pY2a8DMowau-rgc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939402,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw1b-oChjRCCDmrI2a8DMo74z8sgc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938845,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICw4oarChi4BCDOso2a8DMoo43Ctgc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939229,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM-AgICwi5OYChjGByCQuY2a8DMoh5K_ugc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939068,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM6AgIDgnLipChjFBiCNwY2a8DMo-Keuvwc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938911,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgIDgmripChiqBCD4xo2a8DMoyKT2wgc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938991,
+        "source_unit_id": 27198229932,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "payload": {
+          "photo_id": "5191806143598292430",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICw4oarChinAyDgzY2a8DMorLeKxwc="
+        }
+      },
+      {
+        "stage": "creative-target",
+        "group_index": 1,
+        "target_index": 2,
+        "photo_id": "5191806143598292430",
+        "response": {
+          "message": "No creative could be created for this photo_id"
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256931099823,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENSAgIDgw5OYChjYBSDD1I2a8DMoytKbywc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256931099723,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENWAgICwkZOYChjHBCDg3I2a8DMo4aWe0Ac="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399462,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICQm5OYChi7AyC85I2a8DMo4K351Ac="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399012,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQxbipChilByDw642a8DMoofS72Qc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398179,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgICg8rmpChjjByCp8o2a8DMo9sGz3Qc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398819,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELmAgICQgpKYChiQAyDp-Y2a8DMotbn94Qc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399086,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgIDwkoerChi6ByCQgI6a8DMozYfq5Qc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398764,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELWAgIDw4b-oChjgByDPh46a8DMox7Sz6gc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399850,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQxbipChi0AiCvjo6a8DMo39XC7gc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398379,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgICQ_aGpChizCSChlY6a8DMo9P_c8gc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398327,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELqAgICQo5OYChiEByCynI6a8DMo5aeK9wc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399154,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELKAgIDgmaCpChjwAiCjo46a8DMoofyj-wc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399538,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICwxpOYChj5CSDxqo6a8DMox7b2_wc="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398704,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICQm5OYChjcBSC0sY6a8DMohZP0gwg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399231,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgIDwu8KPChjmBiDBuY6a8DMo1vLsiAg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398653,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDghJKYChjiAyChwI6a8DMow7X8jAg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398276,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDghJKYChiFCCDOyI6a8DMom-SIkgg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398594,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgICAvpOYChjUAyCp0I6a8DMo0qPjlgg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399619,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw_YarChiLByCS146a8DMo9I_4mgg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399694,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELWAgIDAvpOYChjnAyC43Y6a8DMooofkngg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398541,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICQ_KGpChiqCSDc5I6a8DMo0PCcowg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399766,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELmAgICwo5OYChivBSDR7I6a8DMo2aOHqAg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398229,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENSAgIDgw5OYChjSAyC_9I6a8DMoqKHtrAg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399315,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgIDgyoarChiVCSCm-46a8DMo2OWAsQg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398879,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENGAgICwxpOYChi1CSC4g4-a8DMo7uj8tQg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398940,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELmAgIDA2b-oChjBCSC3jI-a8DMon6i7uwg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903399389,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELWAgIDw4b-oChiXBCCslY-a8DMo0NPzwAg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398427,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICA1I2oChi8BiDsm4-a8DMotr_vxAg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903398489,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENOAgICA4r-oChj1BiDppo-a8DMoxJPJywg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256903088819,
+        "source_unit_id": 27969965564,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICA1I2oChiNCiDJrY-a8DMosrrYzwg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248486,
+        "source_unit_id": 27497328524,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQxbipChjgBCC5tY-a8DMo9ti_1Ag="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248689,
+        "source_unit_id": 27497328524,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgICAvpOYChiaBCC-vI-a8DMor8_l2Ag="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248560,
+        "source_unit_id": 27497328524,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM6AgIDgnLipChjOCSC8xI-a8DMor6zV3Qg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248880,
+        "source_unit_id": 27497328524,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELKAgIDgmaCpChjCBSCFzI-a8DMo0OOk4gg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248607,
+        "source_unit_id": 27497328524,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM-AgICwi5OYChiZByCt0o-a8DMokPaR5gg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248972,
+        "source_unit_id": 27497328524,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDg8rmpChitBCCL2Y-a8DMo74ig6gg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248651,
+        "source_unit_id": 27497328524,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw1b-oChiLByDn34-a8DMokv2s7gg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256359248827,
+        "source_unit_id": 27497328524,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM-AgICwi5OYChiMBCDo54-a8DMo-NGe8wg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653687,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENOAgICA4r-oChisBiDa74-a8DMoyoeH-Ag="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653941,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELqAgICQo5OYChifByCN9o-a8DMonID7-wg="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653619,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDghJKYChjMBSDv_I-a8DMovciLgAk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653488,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICA5LipChioBiD1hJCa8DMo85eAhQk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653552,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgIDgmripChjpCSCDjJCa8DMo1tCriQk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653824,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ENKAgIDwkoerChiPBSCHk5Ca8DMo-_XQjQk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653761,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELWAgIDgoripChimCSD7m5Ca8DMokNyIkwk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653343,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELSAgIDgmripChjeByC2opCa8DMogK6Blwk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653885,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICA1I2oChj-ByCpqZCa8DMonq6cmwk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653275,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQxbipChiMByC1sZCa8DMoldqUoAk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256391653416,
+        "source_unit_id": 27198229900,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELyAgICg2r-oChitAyC2uZCa8DMomKaGpQk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939153,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQxbipChjKCSDuwZCa8DMo1cGZqgk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939313,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw_YarChidBSDVy5Ca8DMolcyXsAk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938770,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgICw1b-oChj8ByDg0pCa8DMo-4vBtAk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938708,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM-AgICwi5OYChjbAyD-2ZCa8DMo8Jn2uAk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939480,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM-AgICwi5OYChjwByDh4JCa8DMo7bOHvQk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939402,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM6AgIDgnLipChi1CCCy55Ca8DMo0dWNwQk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938845,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDghJKYChjfAyDW7ZCa8DMo2a_4xAk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939229,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELyAgICg2r-oChjKByC99JCa8DMoyvyLyQk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479939068,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "EM-AgICwi5OYChjcCCDp_JCa8DMo8uGXzgk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938911,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELaAgICQw7ipChivByDcg5Ga8DMo0eey0gk="
+        }
+      },
+      {
+        "stage": "creative",
+        "group_index": 1,
+        "source_creative_id": 256479938991,
+        "source_unit_id": 27198229932,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "payload": {
+          "photo_id": "5213761193411867780",
+          "creative_material_type": 1,
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ],
+          "outer_loop_native": 1,
+          "kol_user_type": 1,
+          "kol_user_id": 4219963433,
+          "recommendation": "开始游戏",
+          "advertiser_id": 39059876,
+          "unit_id": 29971296663,
+          "creative_name": "大师爱闯关0430片头+第二关 (12)",
+          "action_bar_text": "去玩游戏",
+          "description": "一步错步步错，挑战你的智商极限！"
+        },
+        "response": {
+          "code": 401000,
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "request_id": "ELiAgIDghJKYChjIByDEi5Ga8DMo7ZGV1wk="
+        }
+      },
+      {
+        "stage": "creative-target",
+        "group_index": 1,
+        "target_index": 3,
+        "photo_id": "5213761193411867780",
+        "response": {
+          "message": "No creative could be created for this photo_id"
+        }
+      }
+    ],
+    "campaign_status_response": {
+      "code": 0,
+      "data": {
+        "campaign_ids": [
+          9964744843
+        ],
+        "errors": [],
+        "campaign_id": null
+      },
+      "message": "OK",
+      "request_id": "ENSAgIDgw5OYChjrCCDdk5Ga8DMo3aSV3Ak="
+    },
+    "unit_status_response": {
+      "code": 0,
+      "data": {
+        "unit_id": null,
+        "errors": [],
+        "unit_ids": [
+          29971296663
+        ]
+      },
+      "message": "OK",
+      "request_id": "ELSAgIDgmripChidCSDFl5Ga8DMogKK_3gk="
+    },
+    "creative_status_response": {
+      "code": 0,
+      "data": {
+        "creative_ids": [
+          270202081684
+        ],
+        "errors": [],
+        "creative_id": null
+      },
+      "message": "OK",
+      "request_id": "ELaAgICQxbipChivAiCNn5Ga8DMo0oqO4wk="
+    },
+    "summary": {
+      "ok": false,
+      "creative_mode": "standard_grouped",
+      "advertiser_id": 39059876,
+      "source_campaign_id": 9295250964,
+      "new_campaign_id": 9964744843,
+      "new_unit_id": 29971296663,
+      "new_unit_ids": [
+        29971296663
+      ],
+      "new_creative_id": 270202081684,
+      "new_creative_ids": [
+        270202081684
+      ],
+      "advanced_program_creative_ids": [],
+      "campaign_name": "开荒之旅_202606260013",
+      "unit_name": "开荒之旅_202606260013",
+      "creative_name": "大师爱闯关0430片头+第二关 (12)",
+      "package_name": null,
+      "ad_group_creatives_requested": 1,
+      "ad_group_creatives_created": 0,
+      "creative_groups_requested": 1,
+      "creative_groups_created": 0,
+      "creatives_requested": 3,
+      "creatives_created": 1,
+      "openapi_creatives_created": 1,
+      "material_count": 3,
+      "materials_per_creative": [
+        3
+      ],
+      "creative_group_details": [
+        {
+          "group_index": 1,
+          "new_unit_id": 29971296663,
+          "unit_name": "开荒之旅_202606260013",
+          "requested_material_count": 3,
+          "created_creative_count": 1,
+          "new_creative_ids": [
+            270202081684
+          ],
+          "photo_ids": [
+            "5215168568322598075",
+            "5191806143598292430",
+            "5213761193411867780"
+          ]
+        }
+      ],
+      "roi_ratio": 0.72,
+      "put_status": 2,
+      "creative_attempt": 1,
+      "errors": 122,
+      "top_errors": [
+        {
+          "message": "该广告组下广告创意名重复[270202081684]",
+          "count": 120
+        },
+        {
+          "message": "No creative could be created for this photo_id",
+          "count": 2
+        }
+      ]
+    }
+  }
+}

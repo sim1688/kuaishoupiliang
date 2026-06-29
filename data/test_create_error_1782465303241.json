@@ -1,0 +1,10 @@
+{
+  "version": "20260626-grouped-standard-creative",
+  "error": "refresh token错误",
+  "body": {
+    "code": 402005,
+    "message": "refresh token错误",
+    "data": {},
+    "request_id": "147ea909d1c64f359b6ee295259e43df"
+  }
+}

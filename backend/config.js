@@ -21,6 +21,7 @@ loadEnv(envFile);
 
 const config = {
   envFile,
+  host: process.env.HOST || "127.0.0.1",
   port: Number(process.env.PORT || 4189),
   authCallbackPort: Number(process.env.KUAISHOU_AUTH_CALLBACK_PORT || 8000),
   kuaishou: {
@@ -30,6 +31,8 @@ const config = {
     authUserId: process.env.KUAISHOU_AUTH_USER_ID || "",
     accessToken: process.env.KUAISHOU_ACCESS_TOKEN || "",
     refreshToken: process.env.KUAISHOU_REFRESH_TOKEN || "",
+    expiresAt: process.env.KUAISHOU_TOKEN_EXPIRES_AT || "",
+    refreshTokenExpiresAt: process.env.KUAISHOU_REFRESH_TOKEN_EXPIRES_AT || "",
     advertiserId: process.env.KUAISHOU_ADVERTISER_ID || ""
   }
 };

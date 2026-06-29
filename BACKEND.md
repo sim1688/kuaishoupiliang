@@ -79,14 +79,13 @@ POST /api/kuaishou/creative/status
 4. 创建计划：`/rest/openapi/gw/dsp/campaign/create`
 5. 创建广告组：`/rest/openapi/gw/dsp/unit/create`
 6. 创建创意：`/rest/openapi/gw/dsp/creative/create`
-7. 多素材创建程序化创意包：`/rest/openapi/v2/creative/advanced/program/create`
-8. 暂停计划：`/rest/openapi/v1/campaign/update/status`
-9. 暂停广告组：`/rest/openapi/v1/unit/update/status`
-10. 暂停创意：`/rest/openapi/v1/creative/update/status`
+7. 暂停计划：`/rest/openapi/v1/campaign/update/status`
+8. 暂停广告组：`/rest/openapi/v1/unit/update/status`
+9. 暂停创意：`/rest/openapi/v1/creative/update/status`
 
 复制计划时，后台会先生成可创建 payload，再按计划、广告组、创意顺序创建。默认 `put_status=2`，也就是暂停状态。
 
-`/api/kuaishou/campaign/test-create-flow` 用于最小真实创建联调：从一个源计划学习字段，只创建 1 个计划、1 个广告组，并默认全部暂停。单素材走普通创意接口；同一创意组选择多个已上传素材时，广告组会切成 `unit_type=7`，并只创建 1 个程序化创意包，包内包含这些 `photo_id`。程序化创意2.0最多支持 5 个视频素材，超过会直接拦截。
+`/api/kuaishou/campaign/test-create-flow` 用于最小真实创建联调：从一个源计划学习字段创建 1 个计划，并默认全部暂停。页面里的“广告创意数量”按广告组落地；“每条广告创意素材数”按该广告组下的普通创意数量落地。例如广告创意数量 `1`、每条素材数 `3` 时，后台会创建 1 个广告组，并在这个广告组下创建 3 条普通创意，每条创意绑定 1 个 `photo_id`。这和快手后台把同广告组创意聚合展示为“1 条带 3 个素材”的口径一致。
 
 ## 重要限制
 

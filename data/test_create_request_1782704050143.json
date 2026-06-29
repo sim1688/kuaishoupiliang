@@ -1,0 +1,203 @@
+{
+  "version": "20260626-grouped-standard-creative-3",
+  "received": {
+    "advertiser_id": 39059876,
+    "source_advertiser_id": 39059876,
+    "source_campaign_id": 9295250964,
+    "campaign_name": "开荒之旅_202606290012",
+    "unit_name": "开荒之旅_202606290012",
+    "creative_name": "大师爱闯关0430片头+第二关 (32)",
+    "group_rule": "开荒之旅_[日期][序号]2",
+    "creative_rule": "<账户备注><素材名>",
+    "roi_ratio": "0.72",
+    "promotion_target_type": "miniGame",
+    "mini_app_id_platform": "ks690739594015559335",
+    "mini_app_type": 2,
+    "start_date": "2026-06-29",
+    "photo_id": "5204753993416603103",
+    "photo_ids": [
+      "5204753993416603103",
+      "5219390693351589962",
+      "5217983318833170313"
+    ],
+    "creative_assets": [
+      {
+        "photo_id": "5204753993416603103",
+        "creative_name": "大师爱闯关0430片头+第二关 (32)",
+        "asset_name": "0430片头+第二关 (32)"
+      },
+      {
+        "photo_id": "5219390693351589962",
+        "creative_name": "大师爱闯关0430片头+第一关 (34)",
+        "asset_name": "0430片头+第一关 (34)"
+      },
+      {
+        "photo_id": "5217983318833170313",
+        "creative_name": "大师爱闯关0430片头+第二关 (19)",
+        "asset_name": "0430片头+第二关 (19)"
+      }
+    ],
+    "creative_groups": [
+      {
+        "index": 1,
+        "unit_name": "开荒之旅_202606290012",
+        "creative_name": "大师爱闯关0430片头+第二关 (32)",
+        "photo_ids": [
+          "5204753993416603103",
+          "5219390693351589962",
+          "5217983318833170313"
+        ],
+        "creative_assets": [
+          {
+            "photo_id": "5204753993416603103",
+            "creative_name": "大师爱闯关0430片头+第二关 (32)",
+            "asset_name": "0430片头+第二关 (32)"
+          },
+          {
+            "photo_id": "5219390693351589962",
+            "creative_name": "大师爱闯关0430片头+第一关 (34)",
+            "asset_name": "0430片头+第一关 (34)"
+          },
+          {
+            "photo_id": "5217983318833170313",
+            "creative_name": "大师爱闯关0430片头+第二关 (19)",
+            "asset_name": "0430片头+第二关 (19)"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "unit_name": "开荒之旅_202606290022",
+        "creative_name": "大师爱闯关0430片头+第一关 (8)",
+        "photo_ids": [
+          "5224175765458549102",
+          "5226709043969768614",
+          "5255138013396731901"
+        ],
+        "creative_assets": [
+          {
+            "photo_id": "5224175765458549102",
+            "creative_name": "大师爱闯关0430片头+第一关 (8)",
+            "asset_name": "0430片头+第一关 (8)"
+          },
+          {
+            "photo_id": "5226709043969768614",
+            "creative_name": "大师爱闯关0430片头+第二关 (20)",
+            "asset_name": "0430片头+第二关 (20)"
+          },
+          {
+            "photo_id": "5255138013396731901",
+            "creative_name": "大师爱闯关0430片头+第二关 (31)",
+            "asset_name": "0430片头+第二关 (31)"
+          }
+        ]
+      }
+    ],
+    "advanced_program": false,
+    "action_bar": "去玩游戏",
+    "description": "一步错步步错，挑战你的智商极限！",
+    "put_status": 2,
+    "max_units": 1,
+    "max_creative_attempts": 60,
+    "save_files": true
+  },
+  "options": {
+    "campaignName": "开荒之旅_202606290012",
+    "sourceAdvertiserId": 39059876,
+    "startDate": "2026-06-29",
+    "putStatus": 2,
+    "unitName": "开荒之旅_202606290012",
+    "creativeName": "大师爱闯关0430片头+第二关 (32)",
+    "unitNameRule": "开荒之旅_[日期][序号]2",
+    "creativeNameRule": "<账户备注><素材名>",
+    "roiRatio": "0.72",
+    "photoId": "5204753993416603103",
+    "photoIds": [
+      "5204753993416603103",
+      "5219390693351589962",
+      "5217983318833170313"
+    ],
+    "creativeAssets": [
+      {
+        "photo_id": "5204753993416603103",
+        "creative_name": "大师爱闯关0430片头+第二关 (32)",
+        "asset_name": "0430片头+第二关 (32)"
+      },
+      {
+        "photo_id": "5219390693351589962",
+        "creative_name": "大师爱闯关0430片头+第一关 (34)",
+        "asset_name": "0430片头+第一关 (34)"
+      },
+      {
+        "photo_id": "5217983318833170313",
+        "creative_name": "大师爱闯关0430片头+第二关 (19)",
+        "asset_name": "0430片头+第二关 (19)"
+      }
+    ],
+    "creativeGroups": [
+      {
+        "index": 1,
+        "unit_name": "开荒之旅_202606290012",
+        "creative_name": "大师爱闯关0430片头+第二关 (32)",
+        "photo_ids": [
+          "5204753993416603103",
+          "5219390693351589962",
+          "5217983318833170313"
+        ],
+        "creative_assets": [
+          {
+            "photo_id": "5204753993416603103",
+            "creative_name": "大师爱闯关0430片头+第二关 (32)",
+            "asset_name": "0430片头+第二关 (32)"
+          },
+          {
+            "photo_id": "5219390693351589962",
+            "creative_name": "大师爱闯关0430片头+第一关 (34)",
+            "asset_name": "0430片头+第一关 (34)"
+          },
+          {
+            "photo_id": "5217983318833170313",
+            "creative_name": "大师爱闯关0430片头+第二关 (19)",
+            "asset_name": "0430片头+第二关 (19)"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "unit_name": "开荒之旅_202606290022",
+        "creative_name": "大师爱闯关0430片头+第一关 (8)",
+        "photo_ids": [
+          "5224175765458549102",
+          "5226709043969768614",
+          "5255138013396731901"
+        ],
+        "creative_assets": [
+          {
+            "photo_id": "5224175765458549102",
+            "creative_name": "大师爱闯关0430片头+第一关 (8)",
+            "asset_name": "0430片头+第一关 (8)"
+          },
+          {
+            "photo_id": "5226709043969768614",
+            "creative_name": "大师爱闯关0430片头+第二关 (20)",
+            "asset_name": "0430片头+第二关 (20)"
+          },
+          {
+            "photo_id": "5255138013396731901",
+            "creative_name": "大师爱闯关0430片头+第二关 (31)",
+            "asset_name": "0430片头+第二关 (31)"
+          }
+        ]
+      }
+    ],
+    "advancedProgram": false,
+    "actionBar": "去玩游戏",
+    "description": "一步错步步错，挑战你的智商极限！",
+    "promotionTargetType": "miniGame",
+    "miniAppIdPlatform": "ks690739594015559335",
+    "miniAppType": 2,
+    "maxUnits": 1,
+    "maxCreativeAttempts": 60,
+    "saveFiles": true
+  }
+}

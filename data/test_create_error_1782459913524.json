@@ -1,0 +1,2288 @@
+{
+  "version": "20260625-advanced-program-creative",
+  "error": "No advanced program creative could be created",
+  "body": {
+    "ok": false,
+    "source_campaign_id": 9295250964,
+    "advertiser_id": 39059876,
+    "started_at": "2026-06-26T07:44:53.252Z",
+    "campaign": {
+      "new_campaign_id": 9962425183,
+      "payload": {
+        "advertiser_id": 39059876,
+        "campaign_name": "开荒之旅_20260626_154445",
+        "type": 19,
+        "day_budget": 0,
+        "ad_type": 0,
+        "bid_type": 0,
+        "auto_adjust": 1,
+        "auto_build": 1,
+        "auto_build_name_rule": {
+          "creative_name_rule": "<账户备注><素材名>_[日期][序号]",
+          "unit_name_rule": "开荒之旅_[日期][序号]"
+        },
+        "cap_roi_ratio": 0,
+        "cap_bid": 0,
+        "constrait_cpa": 0,
+        "auto_manage": 1
+      },
+      "response": {
+        "code": 0,
+        "data": {
+          "campaign_id": 9962425183
+        },
+        "message": "OK",
+        "request_id": "ENWAgICwkZOYChiZCiCjhI6X8DMokLquuA0="
+      }
+    },
+    "unit": {
+      "source_unit_id": 27969965564,
+      "new_unit_id": 29959911687,
+      "payload": {
+        "put_status": 2,
+        "bid_type": 10,
+        "ocpx_action_type": 1011,
+        "roi_ratio": 0.72,
+        "scene_id": [
+          6,
+          7,
+          24
+        ],
+        "unit_type": 7,
+        "begin_time": "2026-06-26",
+        "schedule_time": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "day_budget": 0,
+        "schema_uri": "kwai://sogame/launch?appId=ks690739594015559335&from=dsp_kuaishou_default_w&extension=%7B%22callback%22%3A%22__CALLBACK_PARAM__%22%2C%22account_id%22%3A%22__ACCOUNTID__%22%2C%22campaign_id%22%3A%22__DID__%22%2C%22unit_id%22%3A%22__AID__%22%2C%22creative_id%22%3A%22__CID__%22%7D",
+        "show_mode": 2,
+        "smart_cover": false,
+        "asset_mining": false,
+        "extend_search": false,
+        "custom_mini_app_data": {
+          "mini_app_type": 2,
+          "mini_app_id_platform": "ks690739594015559335",
+          "bootstrap_page": "",
+          "bootstrap_params": ""
+        },
+        "target": {
+          "gender": 0,
+          "network": 0,
+          "media_source_type": 0,
+          "user_type": 0,
+          "shared_user": 0,
+          "behavior_type": 0,
+          "disable_installed_app_switch": 0,
+          "ip_type": 0,
+          "filter_converted_level": 0,
+          "platform_os": 0,
+          "filter_time_range": 0,
+          "auto_population": 0,
+          "intelli_extend_option": 0
+        },
+        "outer_loop_native": 1,
+        "quick_search": 0,
+        "target_explore": 0,
+        "unit_material_type": 2,
+        "advertiser_id": 39059876,
+        "campaign_id": 9962425183,
+        "unit_name": "开荒之旅_20260626_154445"
+      },
+      "response": {
+        "code": 0,
+        "data": {
+          "unit_id": 29959911687
+        },
+        "message": "OK",
+        "request_id": "ELaAgICA5LipChj1AiCFiI6X8DMoiNLUug0="
+      }
+    },
+    "creative": null,
+    "creatives": [],
+    "advanced_program_creative": null,
+    "errors": [
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256931099823,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELmAgICwo5OYChiXBCCHj46X8DMout_4vg0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256931099723,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELmAgICwo5OYChivAyCQkY6X8DMoq76awA0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399462,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgICw1b-oChiNCCCdlo6X8DMo5L-oww0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399012,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELaAgICQw7ipChieBSCYmI6X8DMo_9nBxA0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398179,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgIDwkoerChj6BiCrmo6X8DMoqMfpxQ0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398819,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDgoripChjtByC4nI6X8DMo0p-Oxw0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399086,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELSAgIDgmripChj2CCDDno6X8DMoq9qwyA0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398764,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENSAgIDgw5OYChi-AyD1oI6X8DMoo4LsyQ0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399850,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELmAgIDA2b-oChiaCSCIo46X8DMok6iTyw0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398379,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDAvpOYChjjCSCZpY6X8DMomL-6zA0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398327,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELqAgICQo5OYChjaBiCyp46X8DMosP_lzQ0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399154,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgICA1I2oChjbAyCvqY6X8DMovfD_zg0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399538,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDw4b-oChj6BSCmq46X8DMoyJWX0A0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398704,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDgoripChiSCSCprY6X8DMouZ210Q0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399231,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENWAgICwkZOYChjJCSC6r46X8DMoxaPb0g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398653,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELSAgICg8rmpChjdBiDAsY6X8DMouJz70w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398276,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELaAgICA5LipChiQAyDrs46X8DMopNix1Q0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398594,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "EM6AgIDgnLipChjbAyDwtY6X8DMossvR1g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399619,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELKAgIDgmaCpChjGCCD0t46X8DMo6Nbv1w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399694,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELaAgICQxbipChiQBSD3uY6X8DMo3ueN2Q0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398541,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDAvpOYChitBiCEvI6X8DMo9v6x2g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399766,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENGAgICw4oarChjdBCD6vY6X8DMo7NjI2w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398229,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgICQm5OYChjDAyCRwI6X8DMoxPry3A0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399315,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgIDwu8KPChjUBSCIw46X8DMogOHX3g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398879,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgIDwu8KPChimByCbxY6X8DMo2Mn_3w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398940,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgICAvpOYChjiAyCfx46X8DMo762e4Q0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903399389,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELaAgICQxbipChjzBiC7yY6X8DMo5pTL4g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398427,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "EM6AgIDgnLipChiGCSC4y46X8DMohdDl4w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903398489,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELmAgIDA2b-oChj3AyCczY6X8DMo-aHx5A0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256903088819,
+        "source_unit_id": 27969965564,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgIDwkoerChiDBSChz46X8DMo_o6Q5g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256359248486,
+        "source_unit_id": 27497328524,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELmAgIDA2b-oChjTBSCf0Y6X8DMo_Yur5w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256359248689,
+        "source_unit_id": 27497328524,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgICAvpOYChj2AiD30o6X8DMoifeu6A0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256359248560,
+        "source_unit_id": 27497328524,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgIDwkoerChixCSCD1Y6X8DMo0_7S6Q0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256359248880,
+        "source_unit_id": 27497328524,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgIDg8rmpChjHBiDh1o6X8DMoycfa6g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256359248607,
+        "source_unit_id": 27497328524,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDAvpOYChiKCSD72I6X8DMo6Y-G7A0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256359248972,
+        "source_unit_id": 27497328524,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELKAgIDgmaCpChi4BiCV246X8DMouaay7Q0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256359248651,
+        "source_unit_id": 27497328524,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELmAgICwo5OYChj7ByCC3Y6X8DMo7-3C7g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256359248827,
+        "source_unit_id": 27497328524,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENSAgIDgw5OYChjFCCCQ346X8DMo3pro7w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653687,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "EM-AgICwi5OYChjiBSCI4Y6X8DMok4L_8A0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653941,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDw4b-oChjNCSCb446X8DMoqvem8g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653619,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgICQm5OYChitAyCY5Y6X8DMoq6bB8w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653488,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDgoripChjcBCCF546X8DMo7_vR9A0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653552,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELaAgICA5LipChj3AyCK6Y6X8DMoyrDx9Q0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653824,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "EM-AgICwi5OYChiXBCCl646X8DMoyPyd9w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653761,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELmAgIDA2b-oChieCiDC8o6X8DMokJLT-w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653343,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgICAvpOYChjqCCDU9I6X8DMolK76_A0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653885,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgICw_YarChjNBiDL9o6X8DMo48-Q_g0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653275,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "EM6AgIDgnLipChjcBiDT-I6X8DMoxtex_w0="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256391653416,
+        "source_unit_id": 27198229900,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENWAgICwkZOYChiCCSDb-o6X8DMokrDTgA4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479939153,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELWAgIDAvpOYChjaCCDR_I6X8DMo-P3ogQ4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479939313,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "EM6AgIDgnLipChiWByCF_46X8DMo9Pikgw4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479938770,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENOAgICA4r-oChjDCSCQgY-X8DMo_PnHhA4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479938708,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELSAgIDgmripChjzByCwg4-X8DMosNz3hQ4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479939480,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgICw1b-oChiMAiDlhY-X8DMoz6a0hw4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479939402,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgIDg8rmpChicAiD1h4-X8DMoyfDaiA4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479938845,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELSAgICQ_aGpChigAyCfio-X8DMolpmQig4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479939229,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENGAgICwxpOYChj9BSC2jI-X8DMokry6iw4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479939068,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ELiAgICw_YarChiQByDNjo-X8DMotqzljA4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479938911,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "EM-AgICwi5OYChjVBSDQkI-X8DMoze-Cjg4="
+        }
+      },
+      {
+        "stage": "advanced-program-creative",
+        "source_creative_id": 256479938991,
+        "source_unit_id": 27198229932,
+        "payload": {
+          "advertiser_id": 39059876,
+          "unit_id": 29959911687,
+          "package_name": "大师爱闯关程序化测试_154445",
+          "vertical_photo_ids": [
+            "5229805266600521969",
+            "5256263915168399032",
+            "5222486915621058845"
+          ],
+          "action_bar": "去玩游戏",
+          "captions": [
+            "一步错步步错，挑战你的智商极限！"
+          ],
+          "cover_image_tokens": [],
+          "new_expose_tag": [
+            {
+              "text": "爆款游戏",
+              "url": ""
+            },
+            {
+              "text": "全网火热",
+              "url": ""
+            }
+          ]
+        },
+        "response": {
+          "code": 401000,
+          "data": {},
+          "message": "智能化2.0的用户不支持通过openapi使用此功能",
+          "request_id": "ENKAgIDwkoerChjLCCCqlY-X8DMo9u3ykA4="
+        }
+      }
+    ],
+    "campaign_status_response": {
+      "code": 0,
+      "data": {
+        "campaign_ids": [
+          9962425183
+        ],
+        "errors": [],
+        "campaign_id": null
+      },
+      "message": "OK",
+      "request_id": "ELmAgICQgpKYChjtCCDMl4-X8DMo1eqjkg4="
+    },
+    "unit_status_response": {
+      "code": 0,
+      "data": {
+        "unit_id": null,
+        "errors": [],
+        "unit_ids": [
+          29959911687
+        ]
+      },
+      "message": "OK",
+      "request_id": "ENKAgIDwkoerChikByCLnI-X8DMooemClQ4="
+    }
+  }
+}

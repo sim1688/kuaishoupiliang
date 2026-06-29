@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>快手程序化创建</title>
-    <link rel="stylesheet" href="styles.css?v=20260625-advanced-program-creative" />
+    <link rel="stylesheet" href="styles.css?v=20260626-grouped-standard-creative-3" />
   </head>
   <body>
     <div class="main-wrapper">
@@ -221,7 +221,7 @@
                       <td class="table-cell copy-cell">
                         <div class="cell-title"><span>已选：3组</span><button class="cell-link" id="shuffleBtn" type="button">乱序</button><button class="cell-link" data-editor="copy" type="button">添加文案</button></div>
                         <div class="program-tip compact-tip">
-                          选择自动匹配，系统将先通过定向包和创意组排列组合生成一批广告，然后为自动匹配您选择的文案。
+                          选择自动匹配，系统将先通过定向包和广告创意排列组合生成一批广告，然后为自动匹配您选择的文案。
                         </div>
                         <label class="copy-label">已选文案：</label>
                         <textarea id="copyText" rows="4">一步错步步错，挑战你的智商极限！
@@ -461,8 +461,8 @@
               <div class="edit-section">
                 <h3>素材选取方式</h3>
                 <div class="option-row">
-                  <label class="option-card active"><input type="radio" name="folderPickMode" value="random" checked /> 随机选本地素材<span>从本地文件夹中为每个创意组随机抽取素材</span></label>
-                  <label class="option-card"><input type="radio" name="folderPickMode" value="specified" /> 指定选本地素材<span>每个创意组手动勾选要使用的素材</span></label>
+                  <label class="option-card active"><input type="radio" name="folderPickMode" value="random" checked /> 随机选本地素材<span>从本地文件夹中为每条广告创意随机抽取素材</span></label>
+                  <label class="option-card"><input type="radio" name="folderPickMode" value="specified" /> 指定选本地素材<span>每条广告创意手动勾选要使用的素材</span></label>
                 </div>
                 <div class="folder-picker">
                   <input id="folderInput" type="file" webkitdirectory directory multiple accept="video/*,image/*" hidden />
@@ -470,12 +470,12 @@
                   <button class="white-btn" id="randomAssignBtn" type="button">重新随机</button>
                   <button class="white-btn" id="uploadMaterialsBtn" type="button">上传到快手</button>
                   <label class="group-count-field">
-                    <span>创意组数量</span>
-                    <input id="creativeGroupCountInput" type="number" min="1" max="200" step="1" value="16" />
+                    <span>广告创意数量</span>
+                    <input id="creativeGroupCountInput" type="number" min="1" max="200" step="1" value="1" />
                   </label>
                   <label class="group-count-field">
-                    <span>每组素材数</span>
-                    <input id="assetsPerGroupInput" type="number" min="1" max="200" step="1" value="15" />
+                    <span>每条创意素材数</span>
+                    <input id="assetsPerGroupInput" type="number" min="1" max="200" step="1" value="3" />
                   </label>
                   <span id="folderName">未选择文件夹</span>
                   <small id="folderStats">本地素材 0 个 · 已分配 0 个</small>
@@ -493,8 +493,8 @@
               <div class="edit-section">
                 <div class="material-toolbar">
                   <div>
-                    <strong>每个创意组配置</strong>
-                    <span id="materialToolbarStats">16 个创意组 · 本地素材 0 个 · 每组最多 15 个</span>
+                    <strong>每条广告创意配置</strong>
+                    <span id="materialToolbarStats">1 条广告创意 · 本地素材 0 个 · 每条最多 3 个素材</span>
                   </div>
                   <div>
                     <button class="white-btn" id="clearAssetsBtn" type="button">清空素材</button>
@@ -579,6 +579,6 @@
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="app.js?v=20260625-advanced-program-creative"></script>
+    <script src="app.js?v=20260629-lan-api-base"></script>
   </body>
 </html>

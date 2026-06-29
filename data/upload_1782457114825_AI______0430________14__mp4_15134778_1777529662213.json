@@ -1,0 +1,16 @@
+{
+  "advertiser_id": "39059876",
+  "asset_id": "AI片头+游戏/0430片头+第二关 (14).mp4:15134778:1777529662213",
+  "file_name": "0430片头+第二关 (14).mp4",
+  "photo_id": "5222486915621058845",
+  "response": {
+    "code": 0,
+    "data": {
+      "photo_id": "5222486915621058845",
+      "signature": "56c1fccb97b9d3da62f6cf4053aba484",
+      "photoId": "5222486915621058845"
+    },
+    "message": "OK",
+    "request_id": "ELaAgIDQ2b2oChjUAyC0oOOV8DMohYWUmgU="
+  }
+}

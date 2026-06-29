@@ -1,0 +1,89 @@
+{
+  "version": "20260625-advanced-program-creative",
+  "received": {
+    "advertiser_id": 39059876,
+    "source_campaign_id": 9295250964,
+    "campaign_name": "开荒之旅_20260626001",
+    "unit_name": "开荒之旅_20260626001",
+    "creative_name": "大师爱闯关0430片头+第一关 (9)",
+    "group_rule": "开荒之旅_[日期][序号]",
+    "creative_rule": "<账户备注><素材名>",
+    "roi_ratio": "0.72",
+    "promotion_target_type": "miniGame",
+    "mini_app_id_platform": "ks690739594015559335",
+    "mini_app_type": 2,
+    "start_date": "2026-06-26",
+    "photo_id": "5229805266600521969",
+    "photo_ids": [
+      "5229805266600521969",
+      "5256263915168399032",
+      "5222486915621058845"
+    ],
+    "creative_assets": [
+      {
+        "photo_id": "5229805266600521969",
+        "creative_name": "大师爱闯关0430片头+第一关 (9)",
+        "asset_name": "0430片头+第一关 (9)"
+      },
+      {
+        "photo_id": "5256263915168399032",
+        "creative_name": "大师爱闯关0430片头+第一关 (22)",
+        "asset_name": "0430片头+第一关 (22)"
+      },
+      {
+        "photo_id": "5222486915621058845",
+        "creative_name": "大师爱闯关0430片头+第二关 (14)",
+        "asset_name": "0430片头+第二关 (14)"
+      }
+    ],
+    "advanced_program": true,
+    "action_bar": "去玩游戏",
+    "description": "一步错步步错，挑战你的智商极限！",
+    "put_status": 2,
+    "max_units": 1,
+    "max_creative_attempts": 60,
+    "save_files": true
+  },
+  "options": {
+    "campaignName": "开荒之旅_20260626001",
+    "startDate": "2026-06-26",
+    "putStatus": 2,
+    "unitName": "开荒之旅_20260626001",
+    "creativeName": "大师爱闯关0430片头+第一关 (9)",
+    "unitNameRule": "开荒之旅_[日期][序号]",
+    "creativeNameRule": "<账户备注><素材名>",
+    "roiRatio": "0.72",
+    "photoId": "5229805266600521969",
+    "photoIds": [
+      "5229805266600521969",
+      "5256263915168399032",
+      "5222486915621058845"
+    ],
+    "creativeAssets": [
+      {
+        "photo_id": "5229805266600521969",
+        "creative_name": "大师爱闯关0430片头+第一关 (9)",
+        "asset_name": "0430片头+第一关 (9)"
+      },
+      {
+        "photo_id": "5256263915168399032",
+        "creative_name": "大师爱闯关0430片头+第一关 (22)",
+        "asset_name": "0430片头+第一关 (22)"
+      },
+      {
+        "photo_id": "5222486915621058845",
+        "creative_name": "大师爱闯关0430片头+第二关 (14)",
+        "asset_name": "0430片头+第二关 (14)"
+      }
+    ],
+    "advancedProgram": true,
+    "actionBar": "去玩游戏",
+    "description": "一步错步步错，挑战你的智商极限！",
+    "promotionTargetType": "miniGame",
+    "miniAppIdPlatform": "ks690739594015559335",
+    "miniAppType": 2,
+    "maxUnits": 1,
+    "maxCreativeAttempts": 60,
+    "saveFiles": true
+  }
+}

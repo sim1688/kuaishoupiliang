@@ -3,10 +3,15 @@ const fs = require("fs");
 const path = require("path");
 const { config } = require("./backend/config");
 const {
+  createKuaishouAuthContext,
   exchangeAccessToken,
   refreshAccessToken,
   kuaishouRequest,
-  getTokenStatus
+  getTokenStatus,
+  markTokenInvalid,
+  serializeKuaishouAuth,
+  takeKuaishouAuthResponse,
+  withKuaishouAuth
 } = require("./backend/kuaishouClient");
 const {
   listCampaigns,
@@ -28,7 +33,7 @@ const {
 const { uploadAdVideo } = require("./backend/kuaishouMaterialService");
 
 const root = __dirname;
-const BUILD_VERSION = "20260625-advanced-program-creative";
+const BUILD_VERSION = "20260626-grouped-standard-creative-3";
 const corsHeaders = {
   "access-control-allow-origin": "*",
   "access-control-allow-methods": "GET,POST,OPTIONS",
@@ -47,8 +52,54 @@ const mime = {
 };
 
 function sendJson(res, status, body) {
+  const auth = takeKuaishouAuthResponse();
+  const responseBody = auth && body && typeof body === "object" && !Array.isArray(body)
+    ? Object.assign({}, body, { auth })
+    : body;
   res.writeHead(status, jsonHeaders);
-  res.end(JSON.stringify(body));
+  res.end(JSON.stringify(responseBody));
+}
+
+function decodeBase64Json(value) {
+  if (!value) return null;
+  try {
+    return JSON.parse(Buffer.from(String(value), "base64").toString("utf8"));
+  } catch (error) {
+    return null;
+  }
+}
+
+function parseRequestAuth(req) {
+  const raw = req.headers["x-kuaishou-auth"];
+  const data = decodeBase64Json(raw) || {};
+  return createKuaishouAuthContext({
+    clientManaged: Boolean(raw),
+    accessToken: data.accessToken || data.access_token || "",
+    refreshToken: data.refreshToken || data.refresh_token || "",
+    authUserId: data.authUserId || data.auth_user_id || data.userId || data.user_id || "",
+    advertiserId: data.advertiserId || data.advertiser_id || "",
+    expiresAt: data.expiresAt || data.expires_at,
+    refreshTokenExpiresAt: data.refreshTokenExpiresAt || data.refresh_token_expires_at
+  });
+}
+
+function publicBaseUrl(req) {
+  const host = req.headers["x-forwarded-host"] || req.headers.host || `127.0.0.1:${config.port}`;
+  const proto = req.headers["x-forwarded-proto"] || "http";
+  return `${proto}://${host}`;
+}
+
+function encodeState(value) {
+  return Buffer.from(JSON.stringify(value), "utf8").toString("base64url");
+}
+
+function decodeState(value) {
+  if (!value) return {};
+  try {
+    return JSON.parse(Buffer.from(String(value), "base64url").toString("utf8"));
+  } catch (error) {
+    return {};
+  }
 }
 
 function firstDefined() {
@@ -63,6 +114,98 @@ function writeDebugFile(name, data) {
   const dir = path.join(root, "data");
   if (!fs.existsSync(dir)) fs.mkdirSync(dir);
   fs.writeFileSync(path.join(dir, name), JSON.stringify(data, null, 2), "utf8");
+}
+
+function firstResultError(result) {
+  const summaryErrors = result && result.summary && Array.isArray(result.summary.top_errors)
+    ? result.summary.top_errors
+    : [];
+  if (summaryErrors[0] && summaryErrors[0].message) return summaryErrors[0].message;
+  const errors = result && Array.isArray(result.errors) ? result.errors : [];
+  const first = errors[0] || {};
+  return first.response && first.response.message ? first.response.message : first.message || "";
+}
+
+function tokenErrorKind(error) {
+  const body = error && error.body;
+  const code = body && body.code;
+  const message = String((body && body.message) || error.message || "");
+  if (code === 402004 || message.includes("access token")) return "access_token_invalid";
+  if (code === 402005 || message.includes("refresh token")) return "refresh_token_invalid";
+  return "";
+}
+
+async function verifyAuthStatus() {
+  const status = Object.assign({}, getTokenStatus(), {
+    valid: false,
+    state: "missing",
+    message: ""
+  });
+  if (!status.hasAppId || !status.hasSecret) {
+    status.state = "app_missing";
+    status.message = "未配置快手应用";
+    return status;
+  }
+  if (!status.hasAccessToken && !status.hasRefreshToken) {
+    status.state = "missing";
+    status.message = "未授权";
+    return status;
+  }
+  if (!config.kuaishou.authUserId) {
+    status.state = status.hasRefreshToken ? "refreshable" : "missing_user";
+    status.message = "缺少授权 user_id";
+    return status;
+  }
+
+  try {
+    const result = await kuaishouRequest("/rest/openapi/gw/uc/v1/advertisers", {
+      method: "POST",
+      body: { advertiser_id: Number(config.kuaishou.authUserId), page: 1, page_size: 1 }
+    });
+    status.valid = true;
+    status.state = "valid";
+    status.message = "已授权";
+    status.rawCode = result && result.code;
+    return status;
+  } catch (error) {
+    const kind = tokenErrorKind(error);
+    if (kind === "access_token_invalid" && status.hasRefreshToken) {
+      try {
+        await refreshAccessToken();
+        const result = await kuaishouRequest("/rest/openapi/gw/uc/v1/advertisers", {
+          method: "POST",
+          body: { advertiser_id: Number(config.kuaishou.authUserId), page: 1, page_size: 1 }
+        });
+        const refreshed = Object.assign({}, getTokenStatus(), {
+          valid: true,
+          state: "valid",
+          message: "已自动刷新授权",
+          rawCode: result && result.code
+        });
+        return refreshed;
+      } catch (refreshError) {
+        const refreshKind = tokenErrorKind(refreshError);
+        const message = refreshError && refreshError.body && refreshError.body.message
+          ? refreshError.body.message
+          : refreshError.message;
+        markTokenInvalid(message);
+        return Object.assign({}, getTokenStatus(), {
+          valid: false,
+          state: refreshKind === "refresh_token_invalid" ? "expired" : "invalid",
+          message: refreshKind === "refresh_token_invalid" ? "授权已失效，请重新授权" : message,
+          detail: refreshError.body || null
+        });
+      }
+    }
+    const message = error && error.body && error.body.message ? error.body.message : error.message;
+    markTokenInvalid(message);
+    return Object.assign({}, getTokenStatus(), {
+      valid: false,
+      state: kind ? "expired" : "invalid",
+      message: kind ? "授权已失效，请重新授权" : message,
+      detail: error.body || null
+    });
+  }
 }
 
 function replaceAllText(value, search, replacement) {
@@ -184,8 +327,11 @@ function buildPreviewRows(payload) {
   const date = replaceAllText(payload.startDate || new Date().toISOString().slice(0, 10), "-", "");
   const groupedAssets = [];
   if (groupAssignments.length && allAssets.length) {
-    groupAssignments.forEach((ids, groupIndex) => {
-      const groupAssets = (ids || [])
+    const normalizedAssignments = groupAssignments.every((ids) => Array.isArray(ids))
+      ? groupAssignments
+      : [groupAssignments];
+    normalizedAssignments.forEach((ids, groupIndex) => {
+      const groupAssets = (Array.isArray(ids) ? ids : [ids])
         .map((id) => allAssets.find((asset) => asset.id === id))
         .filter(Boolean)
         .map((asset) => Object.assign({ groupIndex }, asset));
@@ -254,7 +400,7 @@ async function handleApi(req, res) {
   }
 
   if (req.method === "GET" && url.pathname === "/api/auth/status") {
-    sendJson(res, 200, getTokenStatus());
+    sendJson(res, 200, await verifyAuthStatus());
     return;
   }
 
@@ -452,6 +598,7 @@ async function handleApi(req, res) {
     const body = await readBody(req);
     const createOptions = {
       campaignName: firstDefined(body.campaign_name, body.campaignName),
+      sourceAdvertiserId: firstDefined(body.source_advertiser_id, body.sourceAdvertiserId),
       nameSuffix: firstDefined(body.name_suffix, body.nameSuffix),
       startDate: firstDefined(body.start_date, body.startDate),
       putStatus: firstDefined(body.put_status, body.putStatus, 2),
@@ -464,6 +611,7 @@ async function handleApi(req, res) {
       photoId: firstDefined(body.photo_id, body.photoId),
       photoIds: firstDefined(body.photo_ids, body.photoIds),
       creativeAssets: firstDefined(body.creative_assets, body.creativeAssets),
+      creativeGroups: firstDefined(body.creative_groups, body.creativeGroups),
       advancedProgram: firstDefined(body.advanced_program, body.advancedProgram),
       actionBar: firstDefined(body.action_bar, body.actionBar, body.action_bar_text, body.actionBarText),
       description: firstDefined(body.description, body.caption, body.copy),
@@ -504,7 +652,17 @@ async function handleApi(req, res) {
       firstDefined(body.source_campaign_id, body.sourceCampaignId, body.campaign_id, body.campaignId),
       createOptions
     );
-    sendJson(res, 200, { ok: result.ok, version: BUILD_VERSION, data: result.summary, result });
+    if (!result.ok) {
+      sendJson(res, 502, {
+        ok: false,
+        error: firstResultError(result) || "真实创建失败",
+        version: BUILD_VERSION,
+        data: result.summary,
+        result
+      });
+      return;
+    }
+    sendJson(res, 200, { ok: true, version: BUILD_VERSION, data: result.summary, result });
     return;
   }
 
@@ -631,15 +789,23 @@ const server = http.createServer(async (req, res) => {
       serveStatic(req, res);
     }
   } catch (error) {
+    if (req.url && req.url.includes("/api/kuaishou/campaign/test-create-flow") && error.body) {
+      writeDebugFile(`test_create_error_${Date.now()}.json`, {
+        version: BUILD_VERSION,
+        error: error.message,
+        body: error.body
+      });
+    }
     sendJson(res, error.status || 500, {
-      error: error.message,
+      ok: false,
+      error: firstResultError(error.body) || error.message,
       detail: error.body || null
     });
   }
 });
 
-server.listen(config.port, "127.0.0.1", () => {
-  console.log(`Kuaishou batch tool: http://127.0.0.1:${config.port}`);
+server.listen(config.port, config.host, () => {
+  console.log(`Kuaishou batch tool: http://${config.host}:${config.port}`);
 });
 
 const callbackServer = http.createServer(async (req, res) => {
