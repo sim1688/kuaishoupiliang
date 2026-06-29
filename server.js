@@ -37,7 +37,7 @@ const BUILD_VERSION = "20260626-grouped-standard-creative-3";
 const corsHeaders = {
   "access-control-allow-origin": "*",
   "access-control-allow-methods": "GET,POST,OPTIONS",
-  "access-control-allow-headers": "content-type,access-token"
+  "access-control-allow-headers": "content-type,access-token,x-kuaishou-auth"
 };
 const jsonHeaders = { "content-type": "application/json; charset=utf-8", ...corsHeaders };
 const mime = {
@@ -151,7 +151,7 @@ async function verifyAuthStatus() {
     status.message = "未授权";
     return status;
   }
-  if (!config.kuaishou.authUserId) {
+  if (!status.authUserId) {
     status.state = status.hasRefreshToken ? "refreshable" : "missing_user";
     status.message = "缺少授权 user_id";
     return status;
@@ -160,7 +160,7 @@ async function verifyAuthStatus() {
   try {
     const result = await kuaishouRequest("/rest/openapi/gw/uc/v1/advertisers", {
       method: "POST",
-      body: { advertiser_id: Number(config.kuaishou.authUserId), page: 1, page_size: 1 }
+      body: { advertiser_id: Number(status.authUserId), page: 1, page_size: 1 }
     });
     status.valid = true;
     status.state = "valid";
@@ -172,9 +172,10 @@ async function verifyAuthStatus() {
     if (kind === "access_token_invalid" && status.hasRefreshToken) {
       try {
         await refreshAccessToken();
+        const nextStatus = getTokenStatus();
         const result = await kuaishouRequest("/rest/openapi/gw/uc/v1/advertisers", {
           method: "POST",
-          body: { advertiser_id: Number(config.kuaishou.authUserId), page: 1, page_size: 1 }
+          body: { advertiser_id: Number(nextStatus.authUserId), page: 1, page_size: 1 }
         });
         const refreshed = Object.assign({}, getTokenStatus(), {
           valid: true,
@@ -417,8 +418,8 @@ async function handleApi(req, res) {
     const authorizeUrl = new URL("https://developers.e.kuaishou.com/tools/authorize");
     authorizeUrl.searchParams.set("app_id", config.kuaishou.appId);
     authorizeUrl.searchParams.set("scope", JSON.stringify(scope));
-    authorizeUrl.searchParams.set("redirect_uri", `http://127.0.0.1:${config.authCallbackPort}/ksAuthCallback`);
-    authorizeUrl.searchParams.set("state", "abcd");
+    authorizeUrl.searchParams.set("redirect_uri", `${publicBaseUrl(req)}/ksAuthCallback`);
+    authorizeUrl.searchParams.set("state", encodeState({ returnTo: publicBaseUrl(req) }));
     authorizeUrl.searchParams.set("oauth_type", "advertiser");
     sendJson(res, 200, { url: authorizeUrl.toString() });
     return;
@@ -438,10 +439,11 @@ async function handleApi(req, res) {
   }
 
   if (req.method === "GET" && url.pathname === "/api/accounts") {
-    if (config.kuaishou.authUserId) {
+    const status = getTokenStatus();
+    if (status.authUserId) {
       const result = await kuaishouRequest("/rest/openapi/gw/uc/v1/advertisers", {
         method: "POST",
-        body: { advertiser_id: Number(config.kuaishou.authUserId) }
+        body: { advertiser_id: Number(status.authUserId) }
       });
       const accounts = normalizeAdvertiserAccounts(result);
       sendJson(res, 200, {
